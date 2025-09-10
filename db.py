@@ -3,10 +3,10 @@ import bcrypt
 import streamlit as st
 
 def init_db():
-    conn = sqlite3.connect("users.db")
+    conn = sqlite3.connect("uses.db")
     c = conn.cursor()
     c.execute("""
-        CREATE TABLE IF NOT EXISTS users (
+        CREATE TABLE IF NOT EXISTS uses (
             username TEXT PRIMARY KEY,
             password BLOB,
             role TEXT
@@ -16,11 +16,11 @@ def init_db():
     conn.close()
 
 def add_user(username, password, role="User"):
-    conn = sqlite3.connect("users.db")
+    conn = sqlite3.connect("uses.db")
     c = conn.cursor()
     hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
     try:
-        c.execute("INSERT INTO users (username, password, role) VALUES (?, ?, ?)",
+        c.execute("INSERT INTO uses (username, password, role) VALUES (?, ?, ?)",
                   (username, hashed, role))
         conn.commit()
     except sqlite3.IntegrityError:
@@ -28,19 +28,19 @@ def add_user(username, password, role="User"):
     conn.close()
 
 def remove_user(username, role="User"):
-    conn = sqlite3.connect("users.db")
+    conn = sqlite3.connect("uses.db")
     c = conn.cursor()
     try:
-        c.execute("DELETE FROM users WHERE username=? AND role=?", (username, role))
+        c.execute("DELETE FROM uses WHERE username=? AND role=?", (username, role))
         conn.commit()
     except sqlite3.DatabaseError:
         st.error("⚠️ Username does not exist.")
     conn.close()
 
 def login_user(username, password):
-    conn = sqlite3.connect("users.db")
+    conn = sqlite3.connect("uses.db")
     c = conn.cursor()
-    c.execute("SELECT username, password, role FROM users WHERE username=?", (username,))
+    c.execute("SELECT username, password, role FROM uses WHERE username=?", (username,))
     result = c.fetchone()
     conn.close()
     if result:
@@ -55,9 +55,9 @@ def login_admin(username, password):
     return None, None
 
 def fetch_all_users():
-    conn = sqlite3.connect("users.db")
+    conn = sqlite3.connect("uses.db")
     c = conn.cursor()
-    c.execute("SELECT username, role FROM users")
-    users = c.fetchall()
+    c.execute("SELECT username, role FROM uses")
+    uses = c.fetchall()
     conn.close()
-    return users
+    return uses

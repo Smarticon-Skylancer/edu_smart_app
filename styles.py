@@ -7,7 +7,7 @@ def inject_css(role=None):
 
     # Default (login/register) colors
     primary_color = "#2563eb"   # Blue
-    hover_color = "#1e40af"
+    hover_color = "#5670c5"
     sidebar_bg = "#1f2937"
 
     if role == "Admin":
@@ -81,13 +81,13 @@ def inject_css(role=None):
 
         /* Tables */
         .stDataFrame {{
-            background-color: black;
+            background-color: white;
             border-radius: 8px;
             padding: 8px;
         }}
 
         /* Messages */
-        .stAlert {{
+        .stAlert error{{
             border-radius: 8px;
             background-color: red;
         }}
@@ -117,6 +117,20 @@ def inject_css(role=None):
         .sub-title{{
             font-size: 30px;
         }}
+        .stAlert success{{
+            border-radius: 8px;
+            background-color: #008000;
+        }}
+        .cgpa-success {{
+            background-color: #16a34a; /* green */
+            color: white;
+            padding: 12px 20px;
+            border-radius: 8px;
+            text-align: center;
+            font-weight: bolder;
+            font-size: 23px;
+            }}
+        
         
         </style>
         """,

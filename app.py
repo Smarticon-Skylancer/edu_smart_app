@@ -24,38 +24,73 @@ def cgpa_calculator_page():
     level = st.selectbox("📌 Select Your Level:", df_courses["Level"].unique())
     level_courses = df_courses[df_courses["Level"] == level]["Course"].unique().tolist()
 
-    num_courses = st.number_input(f"Enter number of courses (Max: {len(level_courses)}):",
-                                  min_value=1, max_value=len(level_courses), step=1)
+    num_courses = st.number_input(
+        f"Enter number of courses (Max: {len(level_courses)}):",
+        min_value=1, max_value=len(level_courses), step=1
+    )
 
     st.write("### 📚 Enter Your Course Details")
     course_inputs = []
     grade_points = {"A": 5, "B": 4, "C": 3, "D": 2, "E": 1, "F": 0}
 
+    selected_courses = []  # Track already chosen courses
+
     for i in range(num_courses):
         st.write(f"#### Course {i+1}")
-        course = st.selectbox(f"Select Course {i+1}", level_courses, key=f"course_{i}")
-        credit_unit = st.number_input(f"Enter Credit Units for {course}", min_value=1, max_value=6, step=1, key=f"credit_{i}")
-        grade = st.selectbox(f"Enter Grade for {course}", options=list(grade_points.keys()), key=f"grade_{i}")
+
+        available_courses = [c for c in level_courses if c not in selected_courses]
+        if not available_courses:
+            st.warning("⚠️ No more unique courses left to select.")
+            break
+
+        course = st.selectbox(f"Select Course {i+1}", available_courses, key=f"course_{i}")
+        selected_courses.append(course)
+
+        credit_unit = st.number_input(
+            f"Enter Credit Units for {course}",
+            min_value=1, max_value=6, step=1, key=f"credit_{i}"
+        )
+        grade = st.selectbox(
+            f"Enter Grade for {course}",
+            options=list(grade_points.keys()), key=f"grade_{i}"
+        )
+
         course_inputs.append({"Course": course, "CreditUnit": credit_unit, "Grade": grade})
 
     if st.button("🎯 Calculate GPA", key='Calculate_cgpa'):
+        # ✅ Validation: prevent duplicates
+        courses_list = [c["Course"] for c in course_inputs]
+        if len(courses_list) != len(set(courses_list)):
+            st.error("⚠️ Duplicate courses detected! Please ensure all courses are unique.")
+            return
+
         total_units = sum([c["CreditUnit"] for c in course_inputs])
         total_points = sum([c["CreditUnit"] * grade_points[c["Grade"]] for c in course_inputs])
         gpa = total_points / total_units if total_units > 0 else 0
 
         st.write("### 📊 Breakdown of Results")
-        st.dataframe(pd.DataFrame(course_inputs))
-        st.success(f"✅ Your GPA is: **{gpa:.2f}**")
+
+        # ✅ Start index at 1
+        df_display = pd.DataFrame(course_inputs)
+        df_display.index = df_display.index + 1
+        st.dataframe(df_display)
+
+
         if gpa >= 4.5:
-            st.write("Class of Degree : First Class")
+            st.markdown(f"""<div class ='cgpa-success'>Your GPA is : {gpa:.2f} <br>
+                        Class of Degree : First Class</div>""", unsafe_allow_html=True)
         elif gpa >= 3.5:
-            st.write("Class of Degree : Second Class Upper")
+            st.markdown(f"""<div class ='cgpa-success'>Your GPA is : {gpa:.2f} <br>
+                        Class of Degree : Second Class Upper</div>""", unsafe_allow_html=True)
         elif gpa >= 2.5:
-            st.write("Class of Degree : Second Class Lower")
+            st.markdown(f"""<div class ='cgpa-success'>Your GPA is : {gpa:.2f} <br>
+                        Class of Degree : Second Class Lower</div>""", unsafe_allow_html=True)
         elif gpa >= 1.5:
-            st.write("Class of Degree : Third Class")
+            st.markdown(f"""<div class ='cgpa-success'>Your GPA is : {gpa:.2f} <br>
+                        Class of Degree : Third Class</div>""", unsafe_allow_html=True)
         else:
             st.error("Class of Degree : Please check with the school.")
+
 
 # -------------------------------
 # Admin Dashboard
@@ -76,15 +111,23 @@ def admin_dashboard():
         users = fetch_all_users()
         if users:
             df = pd.DataFrame(users, columns=["Username", "Role"])
-            st.dataframe(
-            df.style.set_properties(
-                **{
-            'background-color': "green",  # light blue background
-            'color': 'white',                # text color
-        }))
             
+            # Set index properly
+            df = df.set_index(pd.RangeIndex(1, len(df) + 1))
+
+            # Apply styling
+            styled_df = df.style.set_properties(
+                **{
+                    'background-color': "green",
+                    'color': 'white'
+                }
+            )
+
+            # Display styled dataframe
+            st.dataframe(styled_df)
         else:
-            st.info("No registered users found.")
+            st.info('No Regitered Users yet !!! ')
+
 
     elif admin_option == "Add a Course":
         st.subheader("➕ Add a Course")
@@ -192,7 +235,7 @@ elif st.session_state["page"] == "Register":
                         st.error('Password must be at least 6 characters')
                     else:
                         add_user(new_username, new_password, role="User")
-                        st.success("🎉 Registration successful! You can now log in.")
+                        st.markdown("<div class ='Sucess'>🎉 Registration successful! You can now log in.</div>", unsafe_allow_html = True)
                         st.session_state["page"] = "Login"
                         st.rerun()
                 else:
