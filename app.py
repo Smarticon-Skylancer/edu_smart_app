@@ -9,7 +9,7 @@ from styles import inject_css
 # -------------------------------
 # User Dashboard (CGPA Calculator)
 # -------------------------------
-def cgpa_calculator_page():
+def cgpa_calculator_page(user):
     inject_css("general")
     
     df_courses = load_courses()
@@ -32,8 +32,10 @@ def cgpa_calculator_page():
     st.write("### 📚 Enter Your Course Details")
     course_inputs = []
     grade_points = {"A": 5, "B": 4, "C": 3, "D": 2, "E": 1, "F": 0}
+    course_summary = []
 
     selected_courses = []  # Track already chosen courses
+    total_credit_units = []
 
     for i in range(num_courses):
         st.write(f"#### Course {i+1}")
@@ -49,7 +51,9 @@ def cgpa_calculator_page():
         credit_unit = st.number_input(
             f"Enter Credit Units for {course}",
             min_value=1, max_value=6, step=1, key=f"credit_{i}"
+            
         )
+        total_credit_units.append(credit_unit)
         grade = st.selectbox(
             f"Enter Grade for {course}",
             options=list(grade_points.keys()), key=f"grade_{i}"
@@ -74,6 +78,17 @@ def cgpa_calculator_page():
         df_display = pd.DataFrame(course_inputs)
         df_display.index = df_display.index + 1
         st.dataframe(df_display)
+        
+        # Summary Table
+        
+        st.write("###  Summary of Results : ")
+        course_summary.append({'Total Courses Entered': len(courses_list), "Total Credit Units": sum(total_credit_units),"Total Points Attainable": sum(total_credit_units)*5, "Total points Attained": total_points})
+        
+        summary_table = pd.DataFrame(course_summary)
+        # Removing Index
+        summary_table.set_index('Total Courses Entered', inplace=True, drop=True)
+
+        st.dataframe(summary_table)
 
 
         if gpa >= 4.5:
@@ -90,6 +105,8 @@ def cgpa_calculator_page():
                         Class of Degree : Third Class</div>""", unsafe_allow_html=True)
         else:
             st.error("Class of Degree : Please check with the school.")
+        
+        
 
 
 # -------------------------------
@@ -263,7 +280,7 @@ elif st.session_state["page"] == "User":
     user = st.session_state.get("user", "Unknown")
     st.markdown(f"<div class='welcome_message'>🎓 Welcome Back {user}</div>", unsafe_allow_html=True)
     
-    cgpa_calculator_page()
+    cgpa_calculator_page(user)
     
     if st.sidebar.button("Logout"):
         st.session_state.clear()
