@@ -64,7 +64,7 @@ def inject_css(role=None):
 
         /* Buttons */
         .stButton button {{
-            width: 50%;
+            width: 100%;
             background-color: {primary_color};
             color: white;
             border: none;
