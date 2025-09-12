@@ -101,7 +101,7 @@ def admin_dashboard():
     st.header('Welcome Smart')
 
     df_courses = load_courses()
-    admin_option = st.sidebar.radio("Navigation", ["Dashboard", "Add a Course", "Remove a Course", "Remove a User", "Logout"])
+    admin_option = st.sidebar.radio("Navigation", ["Dashboard", "Add a Course", "Remove a Course","Add a User", "Remove a User", "Logout",])
 
     if admin_option == "Dashboard":
         st.subheader("👨‍🏫 Manage Courses")
@@ -154,6 +154,9 @@ def admin_dashboard():
                 st.success(f"Course {course_to_remove} removed successfully!")
         else:
             st.info("No courses available to remove.")
+            
+    elif admin_option == "Add a User":
+        st.info("Feature is coming Soon !!! ")
 
     elif admin_option == "Remove a User":
         st.subheader("➖ Remove a User")
