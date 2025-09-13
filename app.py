@@ -145,7 +145,6 @@ def time_table_generator():
         for subject, weight in subjects.items():
             subject_pool.extend([subject] * weight)
 
-        random.shuffle(subject_pool)
         total_slots = len(days) * len(study_hours)
 
         if len(subject_pool) < total_slots:
