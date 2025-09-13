@@ -2,7 +2,6 @@ import streamlit as st
 import pandas as pd
 import re
 import random 
-import matplotlib.pyplot as plt  
 from db import init_db, add_user, login_user, login_admin, fetch_all_users, remove_user
 from courses import load_courses, save_courses
 from styles import inject_css
@@ -170,15 +169,6 @@ def time_table_generator():
         df.to_excel("timetable.xlsx")
         st.download_button("⬇ Download as Excel", open("timetable.xlsx", "rb"), "timetable.xlsx")
 
-        # Save to PDF
-        fig, ax = plt.subplots(figsize=(10, 6))
-        ax.axis('off')
-        table = ax.table(cellText=df.values, colLabels=df.columns, rowLabels=df.index, loc='center')
-        table.auto_set_font_size(False)
-        table.set_fontsize(10)
-        table.scale(1.2, 1.2)
-        fig.savefig("timetable.pdf", bbox_inches="tight")
-        st.download_button("⬇ Download as PDF", open("timetable.pdf", "rb"), "timetable.pdf")
 
 # -------------------------------
 # Admin Dashboard
