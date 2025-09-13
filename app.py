@@ -166,7 +166,7 @@ def time_table_generator():
 
         # Save to Excel
         df.to_excel("timetable.xlsx")
-        st.download_button("⬇ Download as Excel", open("timetable.xlsx", "rb"), "timetable.xlsx")
+        st.button("⬇ Download as Excel", open("timetable.xlsx", "rb"), "timetable.xlsx")
 
 
 # -------------------------------
@@ -188,7 +188,7 @@ def admin_dashboard():
         st.write("### 👥 Registered Users")
         users = fetch_all_users()
         if users:
-            df = pd.DataFrame(users, columns=["Username", "Role"])
+            df = pd.DataFrame(users, columns=["Username", "Department", "Level", "Type of student", "Email", "Role"])
             
             # Set index properly
             df = df.set_index(pd.RangeIndex(1, len(df) + 1))
@@ -234,12 +234,13 @@ def admin_dashboard():
             st.info("No courses available to remove.")
             
     elif admin_option == "Add a User":
-        st.info("Feature is coming Soon !!! ")
+        st.subheader("Feature is coming Soon !!! ")
+        
 
     elif admin_option == "Remove a User":
         st.subheader("➖ Remove a User")
         users = fetch_all_users()
-        df_users = pd.DataFrame(users, columns=["Username", "Role"])
+        df_users = pd.DataFrame(users, columns=["Username", "Department", "Level", "Type of student", "Email", "Role"])
         if not df_users.empty:
             user_to_remove = st.selectbox("Select User to remove", df_users["Username"].unique())
             if st.button("Remove User", key='Remove_user'):
@@ -277,15 +278,20 @@ if st.session_state["page"] == "Login":
         if role == "Admin":
             user, role_returned = login_admin(username_input, password_input)
         else:
-            user, role_returned = login_user(username_input, password_input)
+            user, role_returned, dept, lvl, type_stu, email = login_user(username_input, password_input)
 
         if user:
             st.session_state['user'] = user
             st.session_state['role'] = role_returned
+            st.session_state['department'] = dept
+            st.session_state['level'] = lvl
+            st.session_state['type_of_student'] = type_stu
+            st.session_state['email'] = email
             st.session_state['page'] = role_returned
             st.rerun()
-        else:
-            st.error("❌ Invalid username or password")
+    else:
+        st.error("❌ Invalid username or password")
+
 
     st.markdown("</div>", unsafe_allow_html=True)
 
@@ -303,11 +309,11 @@ elif st.session_state["page"] == "Register":
     new_username = st.text_input("Choose a Username", key='reg_username')
     department = st.text_input("Enter Department", key='department')
     type_of_student = st.selectbox("Select type of Student : ", ["UG STUDENT", "PGD STUDENT"])
-    level = st.selectbox("Select Level:", ["100 level", "200 level","300 level", "400 level", "500 level", "600 level"])
+    level = st.selectbox("Select Level:", [100, 200,300, 400, 500, 600])
     email = st.text_input("Enter Email ", key = 'email' )
     if email and "@" not in email:
         st.error('Enter a Valid email address !!! ')
-    else:
+    elif email and "@" in email:
         new_password = st.text_input("Choose a Password", type="password", key='reg_password')
         confirm_password = st.text_input("Confirm Password", type="password", key='confirm_reg_password')
 
@@ -317,12 +323,12 @@ elif st.session_state["page"] == "Register":
             else:
                 alphabets = re.findall(r'[A-Za-z]', new_password)
                 numbers = re.findall(r'[0-9]', new_password)
-                if new_username and new_password:
+                if new_username and new_password and department and type_of_student and level and email:
                     if alphabets and numbers:
                         if len(new_password) < 6:
                             st.error('Password must be at least 6 characters')
                         else:
-                            add_user(new_username, new_password, role="User")
+                            add_user(new_username, new_password, department, level, type_of_student,email, role="User")
                             st.markdown("<div class ='Sucess'>🎉 Registration successful! You can now log in.</div>", unsafe_allow_html = True)
                             st.session_state["page"] = "Login"
                             st.rerun()
@@ -345,20 +351,39 @@ elif st.session_state["page"] == "Admin":
 # User Page
 # -------------------------------
 elif st.session_state["page"] == "User":
-    user = st.session_state.get("user")
-    
-    
-    
-    
-    
-    
+    user = st.session_state.get("user","Unknown")
+    department = st.session_state.get("department", "Unknown")
+    email = st.session_state.get("email", "Unknown")
+    level = st.session_state.get("level", "Unknown")
+    type_of_student = st.session_state.get("type_of_student", "Unknown")
     
     
     
     user_option = st.sidebar.radio("Navigation", ["Dashboard", "Timetable Generator", "GPA Calculator","Assignments", "Logout",])
     if user_option == "Dashboard":
-        st.markdown(f"<div class='welcome_message'>🎓 Welcome Back {user}</div>", unsafe_allow_html=True) 
         inject_css("general")
+
+        st.markdown("""
+<div class="user-info-card">
+    <h2>🎓 Welcome Back {user}</h2>
+    <p><strong>Department:</strong> {department}</p>
+    <hr>
+    <p><strong>Email:</strong> {email}</p>
+    <hr>
+    <p><strong>Level:</strong> {level}</p>
+    <hr>
+    <p><strong>Type of Student:</strong> {type_of_student}</p>
+</div>
+""".format(
+    user=user,
+    department=department,
+    email=email,
+    level=level,
+    type_of_student=type_of_student
+), unsafe_allow_html=True)
+
+
+        
 
 
  
@@ -369,7 +394,9 @@ elif st.session_state["page"] == "User":
         time_table_generator()
     elif user_option == "GPA Calculator":
         cgpa_calculator_page(user)
-    
+    elif user_option == "Assignments":
+        inject_css("general")
+        st.subheader("This Feature is coming soon !!! ")
     if user_option == "Logout":
         st.session_state.clear()
         st.rerun()

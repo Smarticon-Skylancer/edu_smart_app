@@ -9,20 +9,25 @@ def init_db():
         CREATE TABLE IF NOT EXISTS uses (
             username TEXT PRIMARY KEY,
             password BLOB,
-            role TEXT
+            role TEXT,
+            department TEXT,
+            level INT,
+            email TEXT,
+            type_of_Student TEXT
         )
     """)
     conn.commit()
     conn.close()
 
-def add_user(username, password, role="User"):
+def add_user(username, password, department, level, type_of_student,email, role="User"):
     conn = sqlite3.connect("uses.db")
     c = conn.cursor()
     hashed = bcrypt.hashpw(password.encode(), bcrypt.gensalt())
     try:
-        c.execute("INSERT INTO uses (username, password, role) VALUES (?, ?, ?)",
-                  (username, hashed, role))
-        conn.commit()
+       c.execute("""
+    INSERT INTO uses (username, password, department, level, type_of_student, email, role)
+    VALUES (?, ?, ?, ?, ?, ?, ?)""",(username, hashed, department, level, type_of_student, email, role))
+       conn.commit()
     except sqlite3.IntegrityError:
         st.error("⚠️ Username already exists.")
     conn.close()
@@ -40,14 +45,18 @@ def remove_user(username, role="User"):
 def login_user(username, password):
     conn = sqlite3.connect("uses.db")
     c = conn.cursor()
-    c.execute("SELECT username, password, role FROM uses WHERE username=?", (username,))
-    result = c.fetchone()
+    c.execute("""
+        SELECT username, password, department, level, type_of_student, email, role
+        FROM uses WHERE username = ?
+    """, (username,))
+    row = c.fetchone()
     conn.close()
-    if result:
-        stored_username, stored_password, role = result
-        if bcrypt.checkpw(password.encode(), stored_password):
-            return stored_username, role
-    return None, None
+
+    if row:
+        db_username, db_password, dept, lvl, type_stu, email, role = row
+        if bcrypt.checkpw(password.encode('utf-8'), db_password):
+            return db_username, role, dept, lvl, type_stu, email
+    return None, None, None, None, None, None
 
 def login_admin(username, password):
     if username == "Smart" and password == "1234.":
@@ -57,7 +66,7 @@ def login_admin(username, password):
 def fetch_all_users():
     conn = sqlite3.connect("uses.db")
     c = conn.cursor()
-    c.execute("SELECT username, role FROM uses")
+    c.execute("SELECT username, department, level, type_of_student,email,role FROM uses")
     uses = c.fetchall()
     conn.close()
     return uses

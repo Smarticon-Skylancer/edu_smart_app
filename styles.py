@@ -136,9 +136,49 @@ def inject_css(role=None):
             font-size: 23px;
             }}
         .labels{{
-            font-size : 27px;
-            font-family : Tahoma
+            font-size : 22px;
+            font-family : Tahoma;
+            text-align : right;
         }}
+        /* Card container */
+.user-info-card {{
+    background-color: #ffffff; /* white background */
+    border-radius: 15px;       /* rounded corners */
+    padding: 20px;
+    margin:  0 auto;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* soft shadow */
+    max-width: 500px;
+}}
+
+/* Card title */
+.user-info-card h2 {{
+    color: #2c3e50; /* dark blue-gray */
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-align: center;
+}}
+
+/* Info text */
+.user-info-card p {{
+    margin: 8px 0;
+    font-size: 20px;
+    color: #34495e;
+}}
+
+/* Highlight labels */
+.user-info-card strong {{
+    color: #27ae60; /* green highlight */
+}}
+.user-info-card hr {{
+    border: none;
+    height: 2px;
+    background-color: #87ceeb; 
+    margin: 10px 0;
+    
+}}
+
+
+        
         
         </style>
         """,
