@@ -23,6 +23,7 @@ def inject_css(role=None):
             background-color: #87ceeb;
             color: #111827;
             font-family: "Segoe UI", Tahoma, sans-serif;
+            display : block;
         }}
 
         /* Headings */
@@ -108,10 +109,14 @@ def inject_css(role=None):
         }}
         /* Welcome Message */
         .welcome_message{{
-           font-size : 40px;
+           font-size : 65px;
            color : #00000;
-           font-family : Arial-black; 
+           font-family : Tahoma; 
+           font-weight : bolder;
            text-align : center;
+           
+           
+           
             
         }}
         .sub-title{{
@@ -130,7 +135,10 @@ def inject_css(role=None):
             font-weight: bolder;
             font-size: 23px;
             }}
-        
+        .labels{{
+            font-size : 27px;
+            font-family : Tahoma
+        }}
         
         </style>
         """,

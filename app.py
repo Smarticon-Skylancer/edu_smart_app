@@ -1,7 +1,8 @@
 import streamlit as st
 import pandas as pd
 import re
-
+import random 
+import matplotlib.pyplot as plt  
 from db import init_db, add_user, login_user, login_admin, fetch_all_users, remove_user
 from courses import load_courses, save_courses
 from styles import inject_css
@@ -105,22 +106,93 @@ def cgpa_calculator_page(user):
                         Class of Degree : Third Class</div>""", unsafe_allow_html=True)
         else:
             st.error("Class of Degree : Please check with the school.")
-        
-        
+            
+            
 
+
+    
+    
+    
+    
+    
+    
+    
+        
+        
+def time_table_generator():
+    inject_css("general")
+    st.title("📅 Timetable App")
+    st.header("🎓 Time Table Generator")
+
+# Step 1: Input subjects with weights
+    st.header("Enter Subjects and Weights")
+    
+    num_subjects = st.number_input("How many subjects?", min_value=1, step=1)
+
+    subjects = {}
+    for i in range(num_subjects):
+        name = st.text_input(f"Subject {i+1} Name", key=f"name_{i}")
+        weight = st.number_input(f"How many times should {name} appear per week?", min_value=1, step=1, key=f"weight_{i}")
+        if name:
+            subjects[name] = weight
+
+    # Step 2: Days & Study Hours
+    days = st.text_input("Enter days (comma separated)", "Monday,Tuesday,Wednesday,Thursday,Friday").split(",")
+    study_hours = st.text_input("Enter study hours (comma separated)", "8am-10am,10am-12pm,12pm-1pm,2pm-4pm,4pm-6pm").split(",")
+
+    # Add a shuffle button
+    if st.button("🎲 Shuffle & Generate Timetable"):
+        subject_pool = []
+        for subject, weight in subjects.items():
+            subject_pool.extend([subject] * weight)
+
+        random.shuffle(subject_pool)
+        total_slots = len(days) * len(study_hours)
+
+        if len(subject_pool) < total_slots:
+            subject_pool.extend(["Free"] * (total_slots - len(subject_pool)))
+        elif len(subject_pool) > total_slots:
+            subject_pool = subject_pool[:total_slots]
+
+        timetable = {}
+        index = 0
+        for day in days:
+            timetable[day.strip()] = {}
+            for hour in study_hours:
+                timetable[day.strip()][hour.strip()] = subject_pool[index]
+                index += 1
+
+        df = pd.DataFrame(timetable)
+        st.write("### Your Generated Timetable")
+        st.dataframe(df)
+
+        # Save to Excel
+        df.to_excel("timetable.xlsx")
+        st.download_button("⬇ Download as Excel", open("timetable.xlsx", "rb"), "timetable.xlsx")
+
+        # Save to PDF
+        fig, ax = plt.subplots(figsize=(10, 6))
+        ax.axis('off')
+        table = ax.table(cellText=df.values, colLabels=df.columns, rowLabels=df.index, loc='center')
+        table.auto_set_font_size(False)
+        table.set_fontsize(10)
+        table.scale(1.2, 1.2)
+        fig.savefig("timetable.pdf", bbox_inches="tight")
+        st.download_button("⬇ Download as PDF", open("timetable.pdf", "rb"), "timetable.pdf")
 
 # -------------------------------
 # Admin Dashboard
 # -------------------------------
 def admin_dashboard():
     inject_css("admin")
-    st.markdown("<div class='admin-title'>📊 Admin Dashboard</div>", unsafe_allow_html=True)
-    st.header('Welcome Smart')
+    
 
-    df_courses = load_courses()
+    df_courses = load_courses().sort_values(by=['Level'])
     admin_option = st.sidebar.radio("Navigation", ["Dashboard", "Add a Course", "Remove a Course","Add a User", "Remove a User", "Logout",])
 
     if admin_option == "Dashboard":
+        st.markdown("<div class='admin-title'>📊 Admin Dashboard</div>", unsafe_allow_html=True)
+        st.header('Welcome Smart')
         st.subheader("👨‍🏫 Manage Courses")
         st.dataframe(df_courses)
 
@@ -148,8 +220,8 @@ def admin_dashboard():
 
     elif admin_option == "Add a Course":
         st.subheader("➕ Add a Course")
-        new_level = st.text_input("Enter Level")
-        new_course = st.text_input("Course Name")
+        new_level = st.selectbox("Select Level : ", [100, 200, 300, 400])
+        new_course = st.text_input("Course Name").capitalize()
         if st.button("Add Course", key='Add_course'):
             if new_level and new_course:
                 if new_course in df_courses['Course'].values:
@@ -228,7 +300,7 @@ if st.session_state["page"] == "Login":
 
     st.markdown("</div>", unsafe_allow_html=True)
 
-    if st.button("Don't have an account? Register as User", key='reg_button'):
+    if st.button("Don't have an account?   Register as Student", key='reg_button'):
         st.session_state["page"] = "Register"
         st.rerun()
 
@@ -240,32 +312,39 @@ elif st.session_state["page"] == "Register":
     st.markdown("<div class='register-title'>📝 Register as User</div>", unsafe_allow_html=True)
 
     new_username = st.text_input("Choose a Username", key='reg_username')
-    new_password = st.text_input("Choose a Password", type="password", key='reg_password')
-    confirm_password = st.text_input("Confirm Password", type="password", key='confirm_reg_password')
+    department = st.text_input("Enter Department", key='department')
+    type_of_student = st.selectbox("Select type of Student : ", ["UG STUDENT", "PGD STUDENT"])
+    level = st.selectbox("Select Level:", ["100 level", "200 level","300 level", "400 level", "500 level", "600 level"])
+    email = st.text_input("Enter Email ", key = 'email' )
+    if email and "@" not in email:
+        st.error('Enter a Valid email address !!! ')
+    else:
+        new_password = st.text_input("Choose a Password", type="password", key='reg_password')
+        confirm_password = st.text_input("Confirm Password", type="password", key='confirm_reg_password')
 
-    if st.button("Register", key='reg_button'):
-        if new_password != confirm_password:
-            st.error('Passwords do not match!')
-        else:
-            alphabets = re.findall(r'[A-Za-z]', new_password)
-            numbers = re.findall(r'[0-9]', new_password)
-            if new_username and new_password:
-                if alphabets and numbers:
-                    if len(new_password) < 6:
-                        st.error('Password must be at least 6 characters')
-                    else:
-                        add_user(new_username, new_password, role="User")
-                        st.markdown("<div class ='Sucess'>🎉 Registration successful! You can now log in.</div>", unsafe_allow_html = True)
-                        st.session_state["page"] = "Login"
-                        st.rerun()
-                else:
-                    st.error('Password must contain both letters and numbers')
+        if st.button("Register", key='reg_button'):
+            if new_password != confirm_password:
+                st.error('Passwords do not match!')
             else:
-                st.error("⚠️ Please fill all fields.")
+                alphabets = re.findall(r'[A-Za-z]', new_password)
+                numbers = re.findall(r'[0-9]', new_password)
+                if new_username and new_password:
+                    if alphabets and numbers:
+                        if len(new_password) < 6:
+                            st.error('Password must be at least 6 characters')
+                        else:
+                            add_user(new_username, new_password, role="User")
+                            st.markdown("<div class ='Sucess'>🎉 Registration successful! You can now log in.</div>", unsafe_allow_html = True)
+                            st.session_state["page"] = "Login"
+                            st.rerun()
+                    else:
+                        st.error('Password must contain both letters and numbers')
+                else:
+                    st.error("⚠️ Please fill all fields.")
 
-    if st.button("Back to Login", key='back_to_login'):
-        st.session_state["page"] = "Login"
-        st.rerun()
+        if st.button("Back to Login", key='back_to_login'):
+            st.session_state["page"] = "Login"
+            st.rerun()
 
 # -------------------------------
 # Admin Page
@@ -277,11 +356,31 @@ elif st.session_state["page"] == "Admin":
 # User Page
 # -------------------------------
 elif st.session_state["page"] == "User":
-    user = st.session_state.get("user", "Unknown")
-    st.markdown(f"<div class='welcome_message'>🎓 Welcome Back {user}</div>", unsafe_allow_html=True)
+    user = st.session_state.get("user")
     
-    cgpa_calculator_page(user)
     
-    if st.sidebar.button("Logout"):
+    
+    
+    
+    
+    
+    
+    
+    user_option = st.sidebar.radio("Navigation", ["Dashboard", "Timetable Generator", "GPA Calculator","Assignments", "Logout",])
+    if user_option == "Dashboard":
+        st.markdown(f"<div class='welcome_message'>🎓 Welcome Back {user}</div>", unsafe_allow_html=True) 
+        inject_css("general")
+
+
+ 
+
+        
+        
+    elif user_option == "Timetable Generator":
+        time_table_generator()
+    elif user_option == "GPA Calculator":
+        cgpa_calculator_page(user)
+    
+    if user_option == "Logout":
         st.session_state.clear()
         st.rerun()
