@@ -12,7 +12,7 @@ def inject_css(role=None):
 
     if role == "Admin":
         primary_color = "#16a34a"   # Green
-        hover_color = "#166534"
+        hover_color = "#78AEB8"
         sidebar_bg = "#064e3b"
 
     st.markdown(
@@ -20,7 +20,7 @@ def inject_css(role=None):
         <style>
         /* General app background */
         .stApp {{
-            background-color: #87ceeb;
+            background-color: #8BBDC6;
             color: #111827;
             font-family: "Segoe UI", Tahoma, sans-serif;
             display : block;
