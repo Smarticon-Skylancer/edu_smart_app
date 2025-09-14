@@ -275,12 +275,13 @@ if st.session_state["page"] == "Login":
     password_input = st.text_input("Password", type="password", key="login_password")
 
     if st.button("Login", key='login_button'):
-        if role == "Admin":
-            user, role_returned = login_admin(username_input, password_input)
-        else:
-            user, role_returned, dept, lvl, type_stu, email = login_user(username_input, password_input)
+         if role == "Admin":
+             user, role_returned = login_admin(username_input, password_input)
+             dept, lvl, type_stu, email = None, None, None, None  # placeholders for admin
+         else:
+             user, role_returned, dept, lvl, type_stu, email = login_user(username_input, password_input)
 
-        if user:
+         if user:
             st.session_state['user'] = user
             st.session_state['role'] = role_returned
             st.session_state['department'] = dept
