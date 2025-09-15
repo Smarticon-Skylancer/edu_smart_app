@@ -39,6 +39,7 @@ def time_table_generator():
         timetable = {}
         index = 0
         for day in days:
+            
             timetable[day.strip()] = {}
             for hour in study_hours:
                 timetable[day.strip()][hour.strip()] = subject_pool[index]
@@ -47,7 +48,3 @@ def time_table_generator():
         df = pd.DataFrame(timetable)
         st.write("### Your Generated Timetable")
         st.dataframe(df)
-
-        # Save to Excel
-        df.to_excel("timetable.xlsx")
-        st.button("⬇ Download as Excel", open("timetable.xlsx", "rb"), "timetable.xlsx")
