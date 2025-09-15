@@ -2,11 +2,6 @@ import streamlit as st
 from styles import inject_css
 import pandas as pd
 
-def admin_dashboard():
-    inject_css("admin")
-    # (paste your admin_dashboard logic here)
-
-
 def time_table_generator():
     inject_css("general")
     st.title("📅 Timetable App")
