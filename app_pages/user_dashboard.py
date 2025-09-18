@@ -2,6 +2,7 @@ import streamlit as st
 from styles import inject_css
 from app_pages.gpa_calculator import cgpa_calculator_page
 from app_pages.timetable import time_table_generator
+from db import fetch_announcements
 
 def user_dashboard():
     user = st.session_state.get("user", "Unknown")
@@ -10,7 +11,7 @@ def user_dashboard():
     level = st.session_state.get("level", "Unknown")
     type_of_student = st.session_state.get("type_of_student", "Unknown")
 
-    user_option = st.sidebar.radio("Navigation", ["Dashboard", "Timetable Generator", "GPA Calculator","AI Assistant", "Assignments","Student Records", "Student Performance","News & Events","Logout"])
+    user_option = st.sidebar.radio("Navigation", ["Dashboard", "Timetable Generator", "GPA Calculator","AI Assistant","Student Chat Room", "Assignments","Student Records", "Student Performance","Announcements & Events","Logout"])
 
     if user_option == "Dashboard":
         inject_css("general")
@@ -31,5 +32,17 @@ def user_dashboard():
     elif user_option == "Logout":
         st.session_state.clear()
         st.rerun()
-    else:
-        st.header("📌 Feature coming soon...")
+    
+    elif user_option == "Announcements & Events":
+        st.subheader("📢 Latest Announcements")
+        announcements = fetch_announcements()
+        if announcements:
+            for ann in announcements:
+                st.success(f"**[{ann[0]}] {ann[1]}**\n\n{ann[2]}\n\n*Posted by {ann[3]} on {ann[4]}*")
+        else:
+            st.info("No announcements yet.")
+
+        
+        
+        
+        

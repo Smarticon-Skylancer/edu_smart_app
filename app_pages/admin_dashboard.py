@@ -2,13 +2,35 @@ import streamlit as st
 from styles import inject_css
 from db import fetch_all_users, remove_user
 from courses import load_courses, save_courses
+from db import add_announcement, fetch_announcements
 import pandas as pd
 
+def post_an_announcement():
+    category = st.selectbox("Select Category:", ['Announcement', 'Event'])
+
+    title = st.text_input("Enter Title")
+    message = st.text_area("Enter Message", height=150, placeholder="Enter your message here...")
+    
+    if st.button("📩 Post"):
+        if not title or not message:
+            st.warning("⚠️ Please fill in all fields.")
+        else:
+            add_announcement(category, title, message, "Admin")
+            st.success(f"{category} successfully posted!")
+
+    st.write("### 📜 Recent Posts")
+    announcements = fetch_announcements()
+    if announcements:
+        for ann in announcements:
+            st.info(f"**[{ann[0]}] {ann[1]}**\n\n{ann[2]}\n\n*Posted by {ann[3]} on {ann[4]}*")
+    else:
+        st.write("No announcements yet.")
+        
 def admin_dashboard():
     inject_css("admin") 
 
     df_courses = load_courses().sort_values(by=['Level'])
-    admin_option = st.sidebar.radio("Navigation", ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a User", "Remove a User","Post an Event", "Logout",])
+    admin_option = st.sidebar.radio("Navigation", ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a User", "Remove a User","Post Announcement", "Logout",])
 
     if admin_option == "Dashboard":
         st.markdown("<div class='admin-title'>📊 Admin Dashboard</div>", unsafe_allow_html=True)
@@ -46,7 +68,7 @@ def admin_dashboard():
     elif admin_option == "Add a Course":
         st.subheader("➕ Add a Course")
         new_level = st.selectbox("Select Level : ", [100, 200, 300, 400])
-        new_course = st.text_input("Course Name").capitalize()
+        new_course = st.text_input("Course Name").upper()
         if st.button("Add Course", key='Add_course'):
             if new_level and new_course:
                 if new_course in df_courses['Course'].values:
@@ -69,8 +91,9 @@ def admin_dashboard():
         else:
             st.info("No courses available to remove.")
             
-    elif admin_option == "Add a User":
-        st.subheader("Feature is coming Soon !!! ")
+    elif admin_option == "Post Announcement":
+        post_an_announcement()
+        
         
 
     elif admin_option == "Remove a User":

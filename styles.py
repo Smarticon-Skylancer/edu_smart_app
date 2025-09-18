@@ -176,7 +176,39 @@ def inject_css(role=None):
     margin: 10px 0;
     
 }}
+.event-card {{
+    background-color: #f7f7f7;
+    border-radius: 15px;       /* rounded corners */
+    padding: 20px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1); /* soft shadow */
+    max-width: 100%;
+}}
+/* Card title */
+.event-card h2 {{
+    color: #2c3e50; /* dark blue-gray */
+    margin-bottom: 15px;
+    font-size: 40px;
+    text-align: center;
+}}
 
+/* Info text */
+.event-card p {{
+    margin: 8px 0;
+    font-size: 20px;
+    color: #34495e;
+}}
+
+/* Highlight labels */
+.event-card strong {{
+    color: blue; /* green highlight */
+}}
+.event-card hr {{
+    border: none;
+    height: 2px;
+    background-color: #87ceeb; 
+    margin: 10px 0;
+    
+}}
 
         
         

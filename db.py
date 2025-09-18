@@ -18,6 +18,42 @@ def init_db():
     """)
     conn.commit()
     conn.close()
+    create_announcements_table()
+def create_announcements_table():
+     conn = sqlite3.connect("uses.db")
+     c = conn.cursor()
+     c.execute("""
+        CREATE TABLE IF NOT EXISTS announcements (
+            id INTEGER PRIMARY KEY AUTOINCREMENT,
+            category TEXT,
+            title TEXT,
+            message TEXT,
+            posted_by TEXT,
+            date_posted TIMESTAMP DEFAULT CURRENT_TIMESTAMP
+        )
+    """)
+     conn.commit()
+     conn.close()
+
+def add_announcement(category, title, message, posted_by):
+    create_announcements_table()  # Ensure table exists
+    conn = sqlite3.connect("uses.db")
+    c = conn.cursor()
+    c.execute("INSERT INTO announcements (category, title, message, posted_by) VALUES (?, ?, ?, ?)",
+              (category, title, message, posted_by))
+    conn.commit()
+    conn.close()
+
+   
+def fetch_announcements():
+    create_announcements_table()
+    conn = sqlite3.connect("uses.db")
+    c = conn.cursor()
+    c.execute("SELECT category, title, message, posted_by, date_posted FROM announcements ORDER BY date_posted DESC")
+    announcements = c.fetchall()
+    conn.close()
+    return announcements
+
 
 def add_user(username, password, department, level, type_of_student,email, role="User"):
     conn = sqlite3.connect("uses.db")
