@@ -1,9 +1,9 @@
 import streamlit as st
 from db import init_db
-from pages.login import login_page
-from pages.register import register_page
-from pages.admin_dashboard import admin_dashboard
-from pages.user_dashboard import user_dashboard
+from app_pages.login import login_page
+from app_pages.register import register_page
+from app_pages.admin_dashboard import admin_dashboard
+from app_pages.user_dashboard import user_dashboard
 
 st.set_page_config(page_title="EduSmart School System", layout="wide")
 init_db()

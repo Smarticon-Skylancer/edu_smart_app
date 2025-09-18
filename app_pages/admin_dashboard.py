@@ -8,14 +8,19 @@ def admin_dashboard():
     inject_css("admin") 
 
     df_courses = load_courses().sort_values(by=['Level'])
-    admin_option = st.sidebar.radio("Navigation", ["Dashboard", "Add a Course", "Remove a Course","Add a User", "Remove a User", "Logout",])
+    admin_option = st.sidebar.radio("Navigation", ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a User", "Remove a User","Post an Event", "Logout",])
 
     if admin_option == "Dashboard":
         st.markdown("<div class='admin-title'>📊 Admin Dashboard</div>", unsafe_allow_html=True)
         st.header('Welcome Smart')
+        
+        
+    elif admin_option == "Course Records":
         st.subheader("👨‍🏫 Manage Courses")
         st.dataframe(df_courses)
-
+        
+        
+    elif admin_option == "Student Records":
         st.header(" 👥 Registered Users")
         users = fetch_all_users()
         if users:
