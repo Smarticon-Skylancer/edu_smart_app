@@ -60,12 +60,11 @@ def inject_css(role=None):
             color: #111827;
             border: 1px solid #d1d5db;
             border-radius: 8px;
-            padding: 6px 10px;
         }}
 
         /* Buttons */
         .stButton button {{
-            width: 100%;
+            width: 40%;
             background-color: {primary_color};
             color: white;
             border: none;
@@ -74,7 +73,7 @@ def inject_css(role=None):
             font-weight: 500;
             transition: background 0.3s ease;
             display : block;
-            margin : 0 auto;
+            margin: 0 auto;
         }}
         .stButton button:hover {{
             background-color: {hover_color};
@@ -96,7 +95,7 @@ def inject_css(role=None):
         .register-title{{
            font-size : 40px;
            color : #00000;
-           font-family : Arial-black; 
+           font-family : ; 
            text-align : center;
         }}
         /* Admin title */
@@ -208,6 +207,15 @@ def inject_css(role=None):
     background-color: #87ceeb; 
     margin: 10px 0;
     
+}}
+.message-card{{
+    background-color: #f7f7f7;
+    border-radius: 5%;
+    width:40%;
+    margin-bottom:3%;
+    text-align: left;
+    font-family:Tahoma;
+    margin-left:50%;
 }}
 
         
