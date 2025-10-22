@@ -1,12 +1,12 @@
-# 🎓 CGPA Calculator App
-
-A GPA/CGPA calculator built with **Streamlit**, featuring:
+# 🎓 Smart Edu App
+A Smart Edu built with **Streamlit**, featuring:
 
 - ✅ User login/registration (with password hashing)
 - ✅ Admin login (hardcoded for now)
 - ✅ Admin dashboard (add/remove courses, remove users)
 - ✅ Course storage in CSV
 - ✅ User storage in SQLite
+- ✅️ Timetable Generator
 
 ---
 
