@@ -15,24 +15,27 @@ def init_chat_db():
             id INTEGER PRIMARY KEY AUTOINCREMENT,
             username TEXT,
             message TEXT,
+            department TEXT,
+            faculty TEXT,
+            level TEXT,
             timestamp TEXT
         )
     """)
     conn.commit()
     conn.close()
 
-def add_message(username, message):
+def add_message(username, message,department,faculty,level):
     conn = sqlite3.connect("chat.db")
     c = conn.cursor()
-    c.execute("INSERT INTO messages (username, message, timestamp) VALUES (?, ?, ?)",
-              (username, message, datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
+    c.execute("INSERT INTO messages (username, message,department,faculty,level, timestamp) VALUES (?, ?, ?,?,?,?)",
+              (username, message,department,faculty,level,  datetime.now().strftime("%Y-%m-%d %H:%M:%S")))
     conn.commit()
     conn.close()
 
-def get_messages():
+def get_messages(department,faculty,level):
     conn = sqlite3.connect("chat.db")
     c = conn.cursor()
-    c.execute("SELECT username, message, timestamp FROM messages ORDER BY id DESC LIMIT 50")
+    c.execute("SELECT username, message, timestamp FROM messages where department = ? and faculty = ? and level = ? ORDER BY id DESC LIMIT 50",(department,faculty,level))
     rows = c.fetchall()
     conn.close()
     return rows[::-1]  # reverse to show oldest first
@@ -62,7 +65,12 @@ def student_chatroom():
     st_autorefresh.info("Chat updates every 5 seconds ⏳")
 
     # Display chat messages
-    messages = get_messages()
+    department = st.session_state.get("role")
+    faculty = st.session_state.get("department")
+
+    level = st.session_state.get("level")
+    
+    messages = get_messages(department, faculty,level)
     chat_container = st.container()
     with chat_container:
         for user, msg, ts in messages:
@@ -72,7 +80,7 @@ def student_chatroom():
     message = st.text_area(placeholder="Type your message here 👇",label="💬 Message : ", key="chat_input")
     send_message = st.button("Send Message", key="send_message")
     if message and send_message:
-        add_message(username, message)
+        add_message(username, message,department,faculty,level)
         st.session_state[message] = ""
         st.rerun()
         

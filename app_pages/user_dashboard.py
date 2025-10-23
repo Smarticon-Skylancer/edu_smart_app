@@ -40,7 +40,7 @@ def user_dashboard():
         st.session_state.clear()
         st.rerun()
     elif user_option == "Chatroom":
-        student_chatroom()
+        st.info("Feature coming Soon !!! ")
     elif user_option == "Announcements & Events":
         inject_css("general")
         st.subheader("📢 Latest Announcements")
