@@ -3,10 +3,10 @@ import pandas as pd
 import streamlit as st
 from styles import inject_css
 from app_pages.gpa_calculator import cgpa_calculator_page
-from app_pages.chatbot import student_chatbot
+
 from app_pages.timetable import time_table_generator
 from db import fetch_announcements,student_fetch_assignments,add_submission,get_user_grade,fetch_submissions
-from app_pages.chatRoom import student_chatroom
+
 import time
 
 def user_dashboard():
