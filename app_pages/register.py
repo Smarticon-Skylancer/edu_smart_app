@@ -94,8 +94,6 @@ def register_page():
                         else:
                             add_tutor(tutor_username, tutor_password, tutor_department, tutor_id, faculty, tutor_email, role = "Tutor")
                             st.success("🎉 Registration successful! You can now log in.")
-                            st.session_state["page"] = "Login"
-                            st.rerun()
                     else:
                         st.error("Password must contain both letters and numbers")
                 else:

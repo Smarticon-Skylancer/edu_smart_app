@@ -45,7 +45,7 @@ def login_page():
                         "faculty": tutor_faculty,
                         "email": tutor_email,
                         "tutor_ID": tutor_ID,
-                        "page": "Course_tutor"
+                        "page": "admin"
                     })
                     st.success("✅ Login successful!")
                     

@@ -6,7 +6,8 @@ def create_submission_table():
     c = conn.cursor()
     c.execute("""
               CREATE TABLE IF NOT EXISTS submissions(
-               student_name TEXT,
+               assignment_id INT UNIQUE,
+               student_name TEXT UNIQUE,
                department TEXT,
                question TEXT,
                course TEXT,
@@ -22,7 +23,7 @@ def init_db():
     c = conn.cursor()
     c.execute("""
         CREATE TABLE IF NOT EXISTS uses (
-            username TEXT PRIMARY KEY,
+            username TEXT PRIMARY KEY UNIQUE,
             password BLOB,
             role TEXT,
             faculty TEXT,
@@ -56,13 +57,13 @@ def init_admin_db():
      c = conn.cursor()
      c.execute("""
         CREATE TABLE IF NOT EXISTS tutors(
-            tutor_id TEXT PRIMARY KEY,
-            tutor_username TEXT,
+            tutor_id TEXT PRIMARY KEY UNIQUE,
+            tutor_username TEXT UNIQUE,
             tutor_password BLOB,
             tutor_department TEXT,
             faculty TEXT,
             role TEXT,
-            tutor_email TEXT
+            tutor_email TEXT UNIQUE
             
         )
     """)
@@ -75,6 +76,7 @@ def create_assignments_table():
     c.execute("""
         CREATE TABLE IF NOT EXISTS assignments(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
+            assignment_id INT UNIQUE,
             faculty TEXT,
             course TEXT,
             department TEXT,
@@ -99,23 +101,30 @@ def add_announcement(category, title, message, posted_by):
     conn.commit()
     conn.close()
 
-def add_assignment(title, question, assigned_by,dead_line,assignment_marks,faculty,department,course,level):
+def add_assignment(title, question,assignment_id, assigned_by,dead_line,assignment_marks,faculty,department,course,level):
     create_assignments_table()  # Ensure table exists
     conn = sqlite3.connect("assignments.db")
     c = conn.cursor()
-    c.execute("INSERT INTO assignments (title, question, assigned_by,dead_line,assignment_marks,faculty,department,course,level) VALUES (?, ?, ?, ?,?,?,?,?,?)",
-              (title, question, assigned_by,dead_line,assignment_marks,faculty,department,course,level))
-    conn.commit()
+    try:
+        c.execute("INSERT INTO assignments (title, question,assignment_id, assigned_by,dead_line,assignment_marks,faculty,department,course,level) VALUES (?, ?, ?, ?,?,?,?,?,?)",
+                (title, question,assignment_id, assigned_by,dead_line,assignment_marks,faculty,department,course,level))
+        conn.commit()
+    except sqlite3.IntegrityError:
+        st.error("Assigment Id have been used Already !!!")
     conn.close()
     
     
-def add_submission(student_name, department,level,question,answers,course,assignment_marks):
+def add_submission(student_name,assignment_id, department,level,question,answers,course,assignment_marks):
     create_submission_table()
     conn = sqlite3.connect("submissions.db")
     c = conn.cursor()
-    c.execute("INSERT INTO submissions (student_name,department,level,question,answers,course,assignment_marks) VALUES (?, ?, ?, ?, ?,?,?)",
-              (student_name,department,level,question,answers,course,assignment_marks))
-    conn.commit()
+    try :
+        c.execute("INSERT INTO submissions (student_name,assignment_id,department,level,question,answers,course,assignment_marks) VALUES (?, ?, ?, ?, ?,?,?)",
+                (student_name,assignment_id,department,level,question,answers,course,assignment_marks))
+        conn.commit()
+    except sqlite3.IntegrityError:
+        st.error("You have already made a submission to this assignment !!! ")
+        
     conn.close()
     
 def fetch_submissions(department,level):
@@ -208,10 +217,10 @@ def login_tutor(tutor_username, tutor_password):
     return None, None, None, None, None, None
 
     return None, None
-def fetch_all_users():
+def fetch_all_users(department):
     conn = sqlite3.connect("students.db")
     c = conn.cursor()
-    c.execute("SELECT username, department, level, type_of_student,email,faculty,role FROM uses")
+    c.execute("SELECT username, department, level, type_of_student,email,faculty,role FROM uses where department = ?",(department,))
     uses = c.fetchall()
     conn.close()
     return uses
@@ -255,11 +264,10 @@ def add_score(student_name,department,score,course):
     conn.close()
 
 
-def fetch_scores_table():
+def fetch_scores_table(department):
     conn = sqlite3.connect("scores.db")
     c = conn.cursor()
-    c.execute("""
-              SELECT * FROM scores""")
+    c.execute("SELECT * FROM scores where department = ? ",(department,))
     grade_table = c.fetchall()
     conn.close()
     return grade_table

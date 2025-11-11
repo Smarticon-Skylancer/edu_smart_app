@@ -91,6 +91,9 @@ def inject_css(role=None):
             border-radius: 8px;
             background-color: red;
         }}
+        .stAlert info{{
+            color : "f7f7f7";
+        }}
         /* Registration title */
         .register-title{{
            font-size : 40px;

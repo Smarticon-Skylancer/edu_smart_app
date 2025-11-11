@@ -5,18 +5,19 @@ from app_pages.login import login_page
 from app_pages.register import register_page
 from app_pages.admin_dashboard import admin_dashboard
 from app_pages.user_dashboard import user_dashboard
+from app_pages.home import home_page
 
 
 init_db()
 init_admin_db()
 
 if "page" not in st.session_state:
-    st.session_state["page"] = "Login"
-if st.session_state["page"] == "Login":
+    home_page()
+elif st.session_state["page"] == "Login":
     login_page()
 elif st.session_state["page"] == "Register":
     register_page()
-elif st.session_state["page"] == "Course_tutor":
+elif st.session_state["page"] == "admin":
     admin_dashboard()
 elif st.session_state["page"] == "Student":
     user_dashboard()

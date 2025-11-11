@@ -10,6 +10,7 @@ def post_an_assignment():
     title = st.text_input("Enter title of Assigment : ")
     dead_line = st.date_input("Enter Dead Line for Submission : ")
     faculty = st.session_state.get("faculty")
+    assignment_id = st.number_input(label="Enter Assignment ID : ", placeholder="Enter any number")
     department = st.session_state.get("department")
     level = st.selectbox("Select level : ",[100,200,300,400,500,600])
     assigned_by = st.session_state.get("user")
@@ -20,7 +21,7 @@ def post_an_assignment():
         if not title or not question or not dead_line or not department or not course or not assignment_marks or not level:
             st.warning("⚠️ Please fill in all fields.")
         else:
-            add_assignment(title, question, assigned_by,dead_line,assignment_marks,faculty,department,course,level)
+            add_assignment(title,assignment_id, question, assigned_by,dead_line,assignment_marks,faculty,department,course,level)
             st.success(f"{title} successfully posted!")
     
     st.write("### 📜 Recent Assignments")
@@ -88,7 +89,8 @@ def admin_dashboard():
         
     elif admin_option == "Student Records":
         st.header(" 👥 Registered Students")
-        users = fetch_all_users()
+        department = st.session_state.get("faculty")
+        users = fetch_all_users(department)
         
         if users:
             df = pd.DataFrame(users, columns=["Username", "Faculty", "Level", "Type_of_student","Email","Department","Role"])
@@ -107,9 +109,10 @@ def admin_dashboard():
             # Display styled dataframe
             st.dataframe(styled_df)
         else:
-            st.write('### No Regitered Users yet !!! ')
+            st.info('No Registered Users yet !!! ')
         st.header(" 🎓 Students Performance")
-        performance = fetch_scores_table()
+        department = st.session_state.get("department")
+        performance = fetch_scores_table(department)
         
         if performance:
             df = pd.DataFrame(performance, columns = ["Student Name","Department","Assignment Scores","Course"])
@@ -127,7 +130,7 @@ def admin_dashboard():
             if st.button("Delete Records", key=f"delete"):
                 remove_grades()
         else:
-            st.write('### No Academic Records yet !!! ')
+            st.info(' No Academic Records yet !!! ')
 
 
     elif admin_option == "Add a Course":
@@ -191,13 +194,15 @@ def admin_dashboard():
     elif admin_option == "Remove a User":
         inject_css("admin")
         st.subheader("➖ Remove a User")
-        users = fetch_all_users()
+        users = fetch_all_users(faculty)
         df_users = pd.DataFrame(users, columns=["Username", "Faculty", "Level", "Type_of_student","Email","Department","Role"])
         if not df_users.empty:
             user_to_remove = st.selectbox("Select User to remove", df_users["Username"].unique())
             if st.button("Remove User", key='Remove_user'):
                 remove_user(user_to_remove)
                 st.success(f"User {user_to_remove} removed successfully!")
+                import time
+                time.sleep(3)
                 st.rerun()
         else:
             st.info("No users available to remove.")
