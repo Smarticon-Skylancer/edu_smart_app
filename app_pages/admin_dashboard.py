@@ -188,8 +188,9 @@ def admin_dashboard():
         else:
             st.info("No Submissions Have been made yet !")
             
-                    
-                
+    elif admin_option == "Add a User":
+        st.subheader("➕ Add a User")
+        st.info("Feature coming soon!")                           
         
     elif admin_option == "Remove a User":
         inject_css("admin")
