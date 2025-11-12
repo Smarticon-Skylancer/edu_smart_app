@@ -1,15 +1,6 @@
-<<<<<<< HEAD
 streamlit
 pandas
 bcrypt
 openai
 OpenAI
 
-=======
-streamlit
-pandas
-bcrypt
-openai
-OpenAI
-
->>>>>>> a6fa92601b6bbd4c60e4c68f63566b0af936ba0a

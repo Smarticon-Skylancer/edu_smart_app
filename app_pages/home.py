@@ -29,7 +29,7 @@ def home_page():
     """)
 
     st.write("---")
-    col1, col2 = st.columns([1, 1])
+    col1, col2 = st.columns([1, 1], gap= 'small')
     with col1:
         st.button("🔐 Login", use_container_width=True)
         st.session_state["page"] = "Login"
