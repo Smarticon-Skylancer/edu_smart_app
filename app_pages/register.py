@@ -7,22 +7,6 @@ def register_page():
     inject_css("register")
     st.title("📝 Registration Page")
 
-    # CSS for vertical button stacking
-    st.markdown("""
-    <style>
-    .vertical-buttons {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        gap: 10px;
-        width: 100%;
-    }
-    .vertical-buttons button {
-        width: 50%;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
     role_choice = st.selectbox("Register as:", ["Student", "Course Tutor"])
 
     # ------------------- STUDENT REGISTRATION -------------------
@@ -34,7 +18,6 @@ def register_page():
             'Education', 'Health_Sciences', 'Environmental_Sciences'
         ])
 
-        # Department selection based on faculty
         if faculty == 'Science':
             department = st.selectbox("Select Department:", [
                 'Biology', 'Computer Sceince', 'Microbiology', 'Biochemistry',
@@ -71,14 +54,13 @@ def register_page():
         new_password = st.text_input("Choose a Password", type="password")
         confirm_password = st.text_input("Confirm Password", type="password")
 
-        # Vertical buttons for Student
-        st.markdown('<div class="vertical-buttons">', unsafe_allow_html=True)
-        student_register_clicked = st.button("Register", key="student_register")
-        student_back_clicked = st.button("Back to Login", key="student_back")
-        st.markdown('</div>', unsafe_allow_html=True)
+        col1, col2 = st.columns(2)
+        with col1:
+            register_clicked = st.button("Register", use_container_width=True, key="student_register_btn")
+        with col2:
+            back_clicked = st.button("Back to Login", use_container_width=True, key="student_back_btn")
 
-        # Handle Student button clicks
-        if student_register_clicked:
+        if register_clicked:
             if new_password != confirm_password:
                 st.error("Passwords do not match!")
             else:
@@ -101,7 +83,7 @@ def register_page():
                 else:
                     st.error("⚠️ Please fill all fields.")
 
-        if student_back_clicked:
+        if back_clicked:
             st.session_state["page"] = "Login"
             st.rerun()
 
@@ -149,14 +131,13 @@ def register_page():
         tutor_password = st.text_input("Choose a Password", type="password")
         tutor_confirm_password = st.text_input("Confirm Password", type="password")
 
-        # Vertical buttons for Tutor
-        st.markdown('<div class="vertical-buttons">', unsafe_allow_html=True)
-        tutor_register_clicked = st.button("Register", key="tutor_register")
-        tutor_back_clicked = st.button("Back to Login", key="tutor_back")
-        st.markdown('</div>', unsafe_allow_html=True)
+        col1, col2 = st.columns(2)
+        with col1:
+            register_clicked = st.button("Register", use_container_width=True, key="tutor_register_btn")
+        with col2:
+            back_clicked = st.button("Back to Login", use_container_width=True, key="tutor_back_btn")
 
-        # Handle Tutor button clicks
-        if tutor_register_clicked:
+        if register_clicked:
             if tutor_password != tutor_confirm_password:
                 st.error("Passwords do not match!")
             else:
@@ -179,6 +160,6 @@ def register_page():
                 else:
                     st.error("⚠️ Please fill all fields.")
 
-        if tutor_back_clicked:
+        if back_clicked:
             st.session_state["page"] = "Login"
             st.rerun()

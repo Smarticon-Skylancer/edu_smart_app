@@ -6,26 +6,6 @@ from app_pages.home import home_page
 def login_page():
     inject_css("login")
 
-    # CSS for vertical buttons
-    st.markdown("""
-    <style>
-    .vertical-buttons {
-        display: flex;
-        flex-direction: column;  /* stack vertically */
-        align-items: center;     /* center horizontally */
-        gap: 10px;               /* spacing between buttons */
-        width: 100%;
-    }
-    .vertical-buttons button {
-        width: 50%;              /* width of buttons */
-    }
-    .centered-card {
-        max-width: 500px;
-        margin: auto;
-    }
-    </style>
-    """, unsafe_allow_html=True)
-
     st.markdown('<div class="centered-card">', unsafe_allow_html=True)
     st.title("🔐 Login to EduSmart System")
 
@@ -33,14 +13,13 @@ def login_page():
     username_input = st.text_input("Username")
     password_input = st.text_input("Password", type="password")
 
-    # Vertical buttons container
-    st.markdown('<div class="vertical-buttons">', unsafe_allow_html=True)
-    login_clicked = st.button("Login", key="login_btn")
-    st.info("Don't have an account ?")
-    back_clicked = st.button("Register for free", key="register_btn")
-    home_clicked = st.button("🏠 Back to Home", key="home_btn")
-    st.markdown('</div>', unsafe_allow_html=True)
-
+    col1, col2 = st.columns([1, 1], gap='small')
+    with col1:
+        login_clicked = st.button("🔑 Login", use_container_width=True)
+        
+    with col2:
+        back_clicked = st.button("📝 Register", use_container_width=True)
+        
     if login_clicked:
         if not username_input or not password_input:
             st.warning("⚠️ Please enter both username and password.")
@@ -82,7 +61,4 @@ def login_page():
     if back_clicked:
         st.session_state["page"] = "Register"
         st.rerun()
-    if home_clicked:
-        st.session_state.clear()
-        st.rerun()
-    st.markdown("</div>", unsafe_allow_html=True)
+
