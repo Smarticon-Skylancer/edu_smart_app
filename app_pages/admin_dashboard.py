@@ -2,6 +2,7 @@ import streamlit as st
 from styles import inject_css
 from db import fetch_all_users, remove_user, tutor_fetch_assignments,add_score,fetch_scores_table
 from courses import load_courses, save_courses
+from courses import get_courses_by_department, display_courses
 from db import add_announcement, fetch_announcements,add_assignment,fetch_submissions,remove_submission, remove_assignment,remove_grades
 import pandas as pd
 
@@ -68,32 +69,40 @@ def admin_dashboard():
     df_courses = load_courses().sort_values(by=['Level'])
     admin_option = st.sidebar.radio("Navigation", ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a User", "Remove a User","Post Announcement","Post Assignments","View Submissions", "Logout"])
     user = st.session_state.get("user")
+    first_name = st.session_state.get("firstname")
+    surname = st.session_state.get("surname")
     department = st.session_state.get("department")
     email = st.session_state.get("email")
     faculty = st.session_state.get("faculty")
-    tutor_id = st.session_state.get("role")
+    tutor_id = st.session_state.get("tutor_ID")
+    Total_courses = get_courses_by_department()
+    Total_students = fetch_all_users(department)
+    Total_assigned = tutor_fetch_assignments(faculty,department)
     if admin_option == "Dashboard":
         st.title("📊 Course Tutor Dashboard")
         st.header(f'Welcome {user}')
-        st.subheader(f"Faculty : {faculty}")
-        st.subheader(f"Department : {department}")
-        st.subheader(f"Email : {email}")
-        st.subheader(f"Tutor ID : {tutor_id}")
-        
+        st.info(f'Full Name : {first_name} {surname}')
+        st.info(f"Faculty : {faculty}")
+        st.info(f"Department : {department}")
+        st.info(f"Email : {email}")
+        st.info(f"Tutor ID : {tutor_id}")
+        st.info(f"Total Assignments Posted : {len(Total_assigned)}")
+        st.info(f"Total Students in Department : {len(Total_students)}")
+        st.info(f"Total Courses in Department : {len(Total_courses)}")
         
     
     elif admin_option == "Course Records":
         st.subheader("👨‍🏫 Manage Courses")
-        st.dataframe(df_courses)
-        
+        courses_df=get_courses_by_department()
+        display_courses(courses_df)
         
     elif admin_option == "Student Records":
         st.header(" 👥 Registered Students")
-        department = st.session_state.get("faculty")
+        department = st.session_state.get("department")
         users = fetch_all_users(department)
         
         if users:
-            df = pd.DataFrame(users, columns=["Username", "Faculty", "Level", "Type_of_student","Email","Department","Role"])
+            df = pd.DataFrame(users, columns=["Firstname", "Surname", "Username", "Student_id", "Department", "Level", "Type_of_student", "Email", "Faculty", "Role"])
             
             # Set index properly
             df = df.set_index(pd.RangeIndex(1, len(df) + 1))
@@ -137,12 +146,13 @@ def admin_dashboard():
         st.subheader("➕ Add a Course")
         new_level = st.selectbox("Select Level : ", [100, 200, 300, 400])
         new_course = st.text_input("Course Name").upper()
+        department = st.session_state.get("department")
         if st.button("Add Course", key='Add_course'):
             if new_level and new_course:
                 if new_course in df_courses['Course'].values:
                     st.error('⚠️ Course already exists!')
                 else:
-                    df_courses = pd.concat([df_courses, pd.DataFrame([{"Level": new_level, "Course": new_course}])], ignore_index=True)
+                    df_courses = pd.concat([df_courses, pd.DataFrame([{"Level": new_level, "Course": new_course, "Department": department}])], ignore_index=True)
                     save_courses(df_courses)
                     st.success(f"Course {new_course} added successfully!")
             else:
@@ -150,11 +160,12 @@ def admin_dashboard():
 
     elif admin_option == "Remove a Course":
         st.subheader("➖ Remove a Course")
-        if not df_courses.empty:
-            course_to_remove = st.selectbox("Select course to remove", df_courses["Course"].unique())
+        courses_df = get_courses_by_department()
+        if not courses_df.empty:
+            course_to_remove = st.selectbox("Select course to remove", courses_df["Course"].unique())
             if st.button("Remove Course", key='Remove_course'):
-                df_courses = df_courses[df_courses["Course"] != course_to_remove]
-                save_courses(df_courses)
+                courses_df = courses_df[courses_df["Course"] != course_to_remove]
+                save_courses(courses_df)
                 st.success(f"Course {course_to_remove} removed successfully!")
         else:
             st.info("No courses available to remove.")

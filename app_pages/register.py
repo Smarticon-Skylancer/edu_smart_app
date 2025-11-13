@@ -3,163 +3,125 @@ import re
 from db import add_user, add_tutor
 from styles import inject_css
 
+
 def register_page():
     inject_css("register")
     st.title("📝 Registration Page")
 
     role_choice = st.selectbox("Register as:", ["Student", "Course Tutor"])
 
-    # ------------------- STUDENT REGISTRATION -------------------
+    # Faculties and Departments
+    faculties = {
+        "Science": [
+            "Biology", "Computer Science", "Microbiology", "Biochemistry",
+            "Mathematics & Statistics", "Physics with Electronics",
+            "Industrial Chemistry", "Geology", "Applied Geophysics"
+        ],
+        "Arts": ["English", "History & International Studies", "European Languages", "Accounting"],
+        "Social_&_Management_Sciences": [
+            "Geography", "Political Science", "Sociology", "Economics", "Demography & Social Statistics"
+        ],
+        "Health_Sciences": ["Anatomy", "Physiology", "Nursing Sciences", "Medicine and Surgery"],
+        "Environmental_Sciences": ["Building Technology", "Architecture", "Quantity Surveying"],
+        "Administration": ["Business Administration"],
+        "Education": [
+            "Education Biology", "Education Computer Science", "Education Chemistry",
+            "Education Mathematics", "Education Physics", "Education Geography",
+            "Education English", "Education Economics", "Education Geology"
+        ]
+    }
+
+    # =====================================
+    # STUDENT REGISTRATION SECTION
+    # =====================================
     if role_choice == "Student":
-        new_username = st.text_input("Choose a Username")
-        type_of_student = st.selectbox("Select type of Student:", ["UG STUDENT", "PGD STUDENT"])
-        faculty = st.selectbox("Select Faculty:", [
-            'Science', 'Arts', 'Social_&_management_Sciences', 'Administration',
-            'Education', 'Health_Sciences', 'Environmental_Sciences'
-        ])
-
-        if faculty == 'Science':
-            department = st.selectbox("Select Department:", [
-                'Biology', 'Computer Sceince', 'Microbiology', 'Biochemistry',
-                'Mathematics & Statistics', 'Physics with Electronics',
-                'Industrial Chemistry', 'Geology', 'Applied Geophysics'
-            ])
-        elif faculty == 'Arts':
-            department = st.selectbox("Select Department:", [
-                'English', 'History & International Studies', 'European Languages', 'Accounting'
-            ])
-        elif faculty == 'Social_&_management_Sciences':
-            department = st.selectbox("Select Department:", [
-                'Geography', 'Political Sceince', 'Sociology', 'Economics', 'Demography & Social Statistics'
-            ], key='student_social')
-        elif faculty == "Health_Sciences":
-            department = st.selectbox("Select Department:", [
-                'Anatomy', 'Physiology', 'Nursing Sciences', 'Medicine and Surgery'
-            ])
-        elif faculty == "Environmental_Sciences":
-            department = st.selectbox("Select Department:", [
-                'Building Technology', 'Architecture', 'Quantity Surveying'
-            ])
-        elif faculty == "Administration":
-            department = st.selectbox("Select Department:", ['Business Administration'])
-        elif faculty == "Education":
-            department = st.selectbox("Select Department:", [
-                'Education Biology', 'Education Computer Sceince', 'Eductaion Chemistry',
-                'Education Mathematics', 'Education Physics', 'Education Geography',
-                'Eduaction English', 'Education Economics', 'Education Geology'
-            ])
-
+        st.subheader("👨‍🎓 Student Registration")
+        firstname = st.text_input("Enter First Name")
+        surname = st.text_input("Enter Surname")
+        gender = st.selectbox("Select Gender:", ["Male", " Female", "Other"])
+        student_id = st.text_input("Student ID")
+        username = st.text_input("Choose a Username")
+        type_of_student = st.selectbox("Select Type of Student:", ["UG STUDENT", "PGD STUDENT"])
+        faculty = st.selectbox("Select Faculty:", list(faculties.keys()))
+        department = st.selectbox("Select Department:", faculties[faculty])
         level = st.selectbox("Select Level:", [100, 200, 300, 400, 500, 600])
         email = st.text_input("Enter Email")
-        new_password = st.text_input("Choose a Password", type="password")
+        password = st.text_input("Choose a Password", type="password")
         confirm_password = st.text_input("Confirm Password", type="password")
+        
 
         col1, col2 = st.columns(2)
         with col1:
-            register_clicked = st.button("Register", use_container_width=True, key="student_register_btn")
+            register_btn = st.button("Register", use_container_width=True)
         with col2:
-            back_clicked = st.button("Back to Login", use_container_width=True, key="student_back_btn")
+            back_btn = st.button("Back to Login", use_container_width=True)
 
-        if register_clicked:
-            if new_password != confirm_password:
-                st.error("Passwords do not match!")
+        if register_btn:
+            # Basic validation
+            if not all([username, password, confirm_password, email, faculty, department, level, type_of_student]):
+                st.error("⚠️ Please fill in all fields.")
+            elif password != confirm_password:
+                st.error("❌ Passwords do not match!")
+            elif len(password) < 6:
+                st.error("🔒 Password must be at least 6 characters long.")
+            elif not re.search(r"[A-Za-z]", password) or not re.search(r"[0-9]", password):
+                st.error("🔤 Password must contain both letters and numbers.")
+            elif "@" not in email or "." not in email:
+                st.error("📧 Enter a valid email address.")
+            elif len(student_id) != 10:
+                st.error("Student ID must be exactly 10 characters long.")
             else:
-                alphabets = re.findall(r"[A-Za-z]", new_password)
-                numbers = re.findall(r"[0-9]", new_password)
+                # Call db.py add_user
+                add_user(firstname, surname, username, student_id, gender, password, faculty, department, level, type_of_student, email, role="Student")
+                st.session_state["page"] = "Login"
+                st.rerun()
 
-                if all([new_username, new_password, department, type_of_student, level, email, faculty]):
-                    if alphabets and numbers:
-                        if len(new_password) < 6:
-                            st.error("Password must be at least 6 characters")
-                        elif "@" not in email:
-                            st.error("Enter a valid email address")
-                        else:
-                            add_user(new_username, new_password, department, faculty, level, type_of_student, email, role="User")
-                            st.success("🎉 Registration successful! You can now log in.")
-                            st.session_state["page"] = "Login"
-                            st.rerun()
-                    else:
-                        st.error("Password must contain both letters and numbers")
-                else:
-                    st.error("⚠️ Please fill all fields.")
-
-        if back_clicked:
+        if back_btn:
             st.session_state["page"] = "Login"
             st.rerun()
 
-    # ------------------- TUTOR REGISTRATION -------------------
+    # =====================================
+    # TUTOR REGISTRATION SECTION
+    # =====================================
     elif role_choice == "Course Tutor":
-        tutor_username = st.text_input("Enter Username:")
-        faculty = st.selectbox("Select Faculty:", [
-            'Science', 'Arts', 'Social_&_management_Sciences', 'Administration',
-            'Education', 'Health_Sciences', 'Environmental_Sciences'
-        ])
-
-        if faculty == 'Science':
-            tutor_department = st.selectbox("Select Department:", [
-                'Biology', 'Computer Sceince', 'Microbiology', 'Biochemistry',
-                'Mathematics & Statistics', 'Physics with Electronics',
-                'Industrial Chemistry', 'Geology', 'Applied Geophysics'
-            ])
-        elif faculty == 'Arts':
-            tutor_department = st.selectbox("Select Department:", [
-                'English', 'History & International Studies', 'European Languages', 'Accounting'
-            ])
-        elif faculty == 'Social_&_management_Sciences':
-            tutor_department = st.selectbox("Select Department:", [
-                'Geography', 'Political Sceince', 'Sociology', 'Economics', 'Demography & Social Statistics'
-            ], key='tutor_social')
-        elif faculty == "Health_Sciences":
-            tutor_department = st.selectbox("Select Department:", [
-                'Anatomy', 'Physiology', 'Nursing Sciences', 'Medicine and Surgery'
-            ])
-        elif faculty == "Environmental_Sciences":
-            tutor_department = st.selectbox("Select Department:", [
-                'Building Technology', 'Architecture', 'Quantity Surveying'
-            ])
-        elif faculty == "Administration":
-            tutor_department = st.selectbox("Select Department:", ['Business Administration'])
-        elif faculty == "Education":
-            tutor_department = st.selectbox("Select Department:", [
-                'Education Biology', 'Education Computer Sceince', 'Eductaion Chemistry',
-                'Education Mathematics', 'Education Physics', 'Education Geography',
-                'Eduaction English', 'Education Economics', 'Education Geology'
-            ])
-
-        tutor_id = st.text_input("Enter Tutor ID:")
-        tutor_email = st.text_input("Enter Email:")
-        tutor_password = st.text_input("Choose a Password", type="password")
-        tutor_confirm_password = st.text_input("Confirm Password", type="password")
+        st.subheader("👩‍🏫 Tutor Registration")
+        firstname = st.text_input("Enter First Name")
+        surname = st.text_input("Enter Surname")  
+        gender = st.selectbox("Select Gender:", ["Male", " Female", "Other"])
+        tutor_username = st.text_input("Tutor Username")
+        tutor_id = st.text_input("Tutor ID")
+        if len(tutor_id) != 10:
+            st.error("Tutor ID must be exactly 10 characters long.")
+        else:
+            faculty = st.selectbox("Select Faculty:", list(faculties.keys()))
+            tutor_department = st.selectbox("Select Department:", faculties[faculty])
+            tutor_email = st.text_input("Tutor Email")
+            tutor_password = st.text_input("Choose a Password", type="password")
+            tutor_confirm_password = st.text_input("Confirm Password", type="password")
 
         col1, col2 = st.columns(2)
         with col1:
-            register_clicked = st.button("Register", use_container_width=True, key="tutor_register_btn")
+            register_btn = st.button("Register", use_container_width=True)
         with col2:
-            back_clicked = st.button("Back to Login", use_container_width=True, key="tutor_back_btn")
+            back_btn = st.button("Back to Login", use_container_width=True)
 
-        if register_clicked:
-            if tutor_password != tutor_confirm_password:
-                st.error("Passwords do not match!")
+        if register_btn:
+            if not all([tutor_username, tutor_password, tutor_confirm_password, tutor_email, tutor_id, faculty, tutor_department]):
+                st.error("⚠️ Please fill in all fields.")
+            elif tutor_password != tutor_confirm_password:
+                st.error("❌ Passwords do not match!")
+            elif len(tutor_password) < 6:
+                st.error("🔒 Password must be at least 6 characters long.")
+            elif not re.search(r"[A-Za-z]", tutor_password) or not re.search(r"[0-9]", tutor_password):
+                st.error("🔤 Password must contain both letters and numbers.")
+            elif "@" not in tutor_email or "." not in tutor_email:
+                st.error("📧 Enter a valid email address.")
             else:
-                alphabets = re.findall(r"[A-Za-z]", tutor_password)
-                numbers = re.findall(r"[0-9]", tutor_password)
+                # Call db.py add_tutor
+                add_tutor(firstname, surname, gender, tutor_username, tutor_password, tutor_department, faculty, tutor_id, tutor_email, role="Tutor")
+                st.session_state["page"] = "Login"
+                st.rerun()
 
-                if all([tutor_username, tutor_password, tutor_department, tutor_id, faculty, tutor_email]):
-                    if alphabets and numbers:
-                        if len(tutor_password) < 6:
-                            st.error("Password must be at least 6 characters")
-                        elif "@" not in tutor_email:
-                            st.error("Enter a valid email address")
-                        else:
-                            add_tutor(tutor_username, tutor_password, tutor_department, tutor_id, faculty, tutor_email, role="Tutor")
-                            st.success("🎉 Registration successful! You can now log in.")
-                            st.session_state["page"] = "Login"
-                            st.rerun()
-                    else:
-                        st.error("Password must contain both letters and numbers")
-                else:
-                    st.error("⚠️ Please fill all fields.")
-
-        if back_clicked:
+        if back_btn:
             st.session_state["page"] = "Login"
             st.rerun()

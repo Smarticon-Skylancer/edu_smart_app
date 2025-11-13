@@ -11,11 +11,13 @@ import time
 
 def user_dashboard():
     user = st.session_state.get("user", "Unknown")
-    faculty = st.session_state.get("department", "Unknown")
-    department = st.session_state.get("faculty", "Unknown")
-    email = st.session_state.get("role", "Unknown")
+    faculty = st.session_state.get("faculty", "Unknown")
+    department = st.session_state.get("department", "Unknown")
+    email = st.session_state.get("email", "Unknown")
     level = st.session_state.get("level", "Unknown")
     type_of_student = st.session_state.get("type_of_student", "Unknown")
+    firstname = st.session_state.get("firstname", "Unknown")
+    surname = st.session_state.get("surname", "Unknown")
 
     user_option = st.sidebar.radio("Navigation", ["Dashboard", "Timetable Generator", "GPA Calculator","AI Assistant","Chatroom","Assignments","Make a Submission",  "My Grades","Announcements & Events","Logout"])
 
@@ -24,10 +26,11 @@ def user_dashboard():
         st.markdown(f"""
         <div class="user-info-card">
             <h2>🎓 Welcome Back {user}</h2>
+            <p><strong>Full Name:</strong> {firstname} {surname}</p><hr>
             <p><strong>Faculty:</strong> {faculty}</p><hr>
-            <p><strong>Department:</strong> {email}</p><hr>
+            <p><strong>Department:</strong> {department}</p><hr>
             <p><strong>Level:</strong> {level} Level</p><hr>
-            <p><strong>Email:</strong> {department}</p><hr>
+            <p><strong>Email:</strong> {email}</p><hr>
             <p><strong>Type of Student:</strong> {type_of_student}</p>
         </div>
         """, unsafe_allow_html=True)
@@ -99,7 +102,7 @@ def user_dashboard():
             # Display styled dataframe
                 st.dataframe(styled_df)
             else:
-                st.info('### No Records yet !!! ')
+                st.info("No Records yet !!! ")
     elif user_option == "Make a Submission":
         inject_css("general")
         st.title("📬 Make Submissions")

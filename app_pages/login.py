@@ -25,38 +25,48 @@ def login_page():
             st.warning("⚠️ Please enter both username and password.")
         else:
             if role == "Student":
-                user, role_returned, dept, lvl, type_stu, fac, email = login_user(username_input, password_input)
-                if user:
+                firstname, surname, username, student_id,role, gender, faculty, department, level,email, type_of_student= login_user(username_input, password_input)
+                if username:
                     st.session_state.update({
-                        "user": user,
-                        "role": role_returned,
-                        "department": dept,
-                        "level": lvl,
-                        "type_of_student": type_stu,
+                        "firstname": firstname,
+                        "surname": surname, 
+                        "user": username,
+                        "student_id": student_id,
+                        "role": role,
+                        "gender": gender,
+                        "faculty": faculty,
+                        "department": department,
+                        "level": level,
                         "email": email,
-                        "faculty": fac,
+                        "type_of_student": type_of_student,
                         "page": "Student"
                     })
                     st.success("✅ Login successful!")
                     st.rerun()
                 else:
                     st.error("❌ Invalid username or password")
+            # --- login block ---
             elif role == "Course Tutor":
-                user, role_returned, tutor_dept, tutor_faculty, tutor_email, tutor_ID = login_tutor(username_input, password_input)
-                if user:
+                firstname, surname, gender, tutor_id, tutor_username, tutor_department, faculty, tutor_email, role = login_tutor(username_input, password_input)
+                
+                if tutor_username:  # Login successful
                     st.session_state.update({
-                        "user": user,
-                        "role": role_returned,
-                        "department": tutor_dept,
-                        "faculty": tutor_faculty,
+                        "firstname": firstname,
+                        "surname": surname,
+                        "gender": gender,
+                        "tutor_ID": tutor_id,
+                        "user": tutor_username,
+                        "department": tutor_department,
+                        "faculty": faculty,
                         "email": tutor_email,
-                        "tutor_ID": tutor_ID,
-                        "page": "admin"
+                        "role": role,
+                        "page": "Tutor"
                     })
                     st.success("✅ Login successful!")
                     st.rerun()
                 else:
-                    st.error("❌ Invalid username or password")
+                    st.error("❌ Login failed. Check username and password.")
+
 
     if back_clicked:
         st.session_state["page"] = "Register"

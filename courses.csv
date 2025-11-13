@@ -1,62 +1,4043 @@
-Level,Course
-100,GST 101
-100,PHY 106
-100,MATH 103
-100,MATH 102
-100,PHY 102
-100,CSC 102
-100,CSC 101
-100,GST 102
-100,PHY 107
-100,CSC 104
-100,STA 121
-100,MATH 101
-100,STA 101
-200,CSC 203
-200,CSC 202
-200,GST 201
-200,MATH 201
-200,MATH 202
-200,GST 212
-200,CSC 202
-200,IFT 203
-200,CSC 205
-200,IFT 211
-200,CSC 204
-200,CSC 201
-200,CSC 202
-200,CSC 204
-200,CSC 299
-200,IFT 212
-200,CSC 206
-200,CSC 213
-300,CSC 305
-300,CSC 304
-300,CSC 316
-300,CSC 301
-300,GST 301
-300,CSC 399
-300,CSC 317
-300,GST 302
-300,CSC 312
-300,CSC 303
-300,CSC 319
-300,DBS 304
-300,CSC 311
-300,CSC 307
-400,CSC 407
-400,CSC 499
-400,CYB 401
-400,CSC 417
-400,CSC 416
-400,CSC 403
-400,CSC 401
-400,CSC 405
-400,CSC 404
-400,CSC 402
-400,CSC 419
-400,CSC 412
-400,CSC 477
-400,CSC 411
-400,CSC 470
-300,BIO 302
+Level,Course,Department
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,BIO 101,Biology
+100,CHE 101,Biochemistry
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,BIO 102,Microbiology
+100,ARC 101,Architecture
+100,MATH 103,Mathematics & Statistics
+100,ARC 101,Architecture
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,EDU 101,Education Biology
+100,MATH 103,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,MATH 102,Mathematics & Statistics
+100,CSC 101,Computer Science
+100,EDU 101,Education Biology
+100,PHY 106,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 104,Computer Science
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 101,Political Science
+100,CSC 102,Computer Science
+100,GST 102,Economics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,CSC 101,Computer Science
+100,ENG 101,English
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,HIS 101,History & International Studies
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,PHY 102,Physics with Electronics
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,EDU 101,Education Biology
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,GST 101,Political Science
+100,PHY 107,Industrial Chemistry
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,PHY 106,Physics with Electronics
+100,ENG 101,English
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,HIS 101,History & International Studies
+100,GST 101,Political Science
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,GST 101,Political Science
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,CSC 101,Computer Science
+100,PHY 102,Physics with Electronics
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,CSC 102,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,EDU 101,Education Biology
+100,STA 101,Mathematics & Statistics
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,BIO 101,Biology
+100,PHY 107,Industrial Chemistry
+100,GST 101,Political Science
+100,MATH 103,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,PHY 106,Physics with Electronics
+100,STA 121,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 102,Physics with Electronics
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,CSC 102,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,MATH 101,Mathematics & Statistics
+100,CSC 101,Computer Science
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,GST 102,Economics
+100,PHY 102,Physics with Electronics
+100,STA 121,Mathematics & Statistics
+100,PHY 107,Industrial Chemistry
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,ENG 101,English
+100,PHY 106,Physics with Electronics
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,EDU 101,Education Biology
+100,PHY 102,Physics with Electronics
+100,HIS 101,History & International Studies
+100,EDU 101,Education Biology
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,ARC 101,Architecture
+100,PHY 102,Physics with Electronics
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,CSC 102,Computer Science
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,BIO 102,Microbiology
+100,ENG 101,English
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,CHE 101,Biochemistry
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,MATH 103,Mathematics & Statistics
+100,GST 101,Political Science
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,PHY 106,Physics with Electronics
+100,CSC 102,Computer Science
+100,MATH 101,Mathematics & Statistics
+100,GST 102,Economics
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,CSC 101,Computer Science
+100,BIO 102,Microbiology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,CHE 101,Biochemistry
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,ARC 101,Architecture
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,CHE 101,Biochemistry
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,EDU 101,Education Biology
+100,HIS 101,History & International Studies
+100,STA 101,Mathematics & Statistics
+100,ENG 101,English
+100,BIO 102,Microbiology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,BIO 101,Biology
+100,ENG 101,English
+100,STA 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,MATH 101,Mathematics & Statistics
+100,CHE 101,Biochemistry
+100,CHE 101,Biochemistry
+100,PHY 106,Physics with Electronics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,MATH 103,Mathematics & Statistics
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,MATH 103,Mathematics & Statistics
+100,GST 101,Political Science
+100,MATH 102,Mathematics & Statistics
+100,CSC 102,Computer Science
+100,MATH 103,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,GST 102,Economics
+100,CSC 101,Computer Science
+100,PHY 102,Physics with Electronics
+100,BIO 101,Biology
+100,BIO 101,Biology
+100,CHE 101,Biochemistry
+100,EDU 101,Education Biology
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,BIO 102,Microbiology
+100,PHY 102,Physics with Electronics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,GST 102,Economics
+100,MATH 102,Mathematics & Statistics
+100,CSC 102,Computer Science
+100,CSC 101,Computer Science
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,PHY 102,Physics with Electronics
+100,CSC 101,Computer Science
+100,CSC 101,Computer Science
+100,PHY 102,Physics with Electronics
+100,GST 102,Economics
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,CHE 101,Biochemistry
+100,BIO 102,Microbiology
+100,BIO 101,Biology
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,CSC 101,Computer Science
+100,CSC 102,Computer Science
+100,PHY 102,Physics with Electronics
+100,MATH 102,Mathematics & Statistics
+100,MATH 102,Mathematics & Statistics
+100,MATH 103,Mathematics & Statistics
+100,PHY 106,Physics with Electronics
+100,GST 101,Political Science
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 102,Microbiology
+100,CSC 102,Computer Science
+100,CHE 101,Biochemistry
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,GST 101,Political Science
+100,PHY 106,Physics with Electronics
+100,MATH 103,Mathematics & Statistics
+100,ENG 101,English
+100,GST 102,Economics
+100,MATH 102,Mathematics & Statistics
+100,CHE 101,Biochemistry
+100,MATH 101,Mathematics & Statistics
+100,STA 121,Mathematics & Statistics
+100,CSC 104,Computer Science
+100,PHY 107,Industrial Chemistry
+100,CSC 104,Computer Science
+100,STA 121,Mathematics & Statistics
+100,STA 101,Mathematics & Statistics
+100,MATH 101,Mathematics & Statistics
+100,BIO 102,Microbiology
+100,CHE 101,Biochemistry
+100,ENG 101,English
+100,HIS 101,History & International Studies
+100,ARC 101,Architecture
+100,EDU 101,Education Biology
+100,STA 101,Mathematics & Statistics
+100,BIO 101,Biology
+100,BIO 101,Biology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+100,BIO 102,Microbiology
+100,EDU 101,Education Biology
+100,ARC 101,Architecture
+100,HIS 101,History & International Studies
+100,ENG 101,English
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 204,Computer Science
+200,CSC 206,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,CSC 201,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,IFT 211,Computer Science
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,ENG 201,English
+200,CSC 204,Computer Science
+200,IFT 203,Computer Science
+200,CSC 299,Computer Science
+200,HIS 202,History & International Studies
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 213,Computer Science
+200,CSC 213,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,IFT 211,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 203,Computer Science
+200,CSC 206,Computer Science
+200,GST 212,Geography
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 299,Computer Science
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,EDU 201,Education Mathematics
+200,IFT 212,Computer Science
+200,CSC 201,Computer Science
+200,IFT 211,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,CSC 204,Computer Science
+200,GST 212,Geography
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,IFT 203,Computer Science
+200,GST 201,History & International Studies
+200,MATH 202,Mathematics & Statistics
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,IFT 212,Computer Science
+200,CSC 204,Computer Science
+200,CSC 205,Computer Science
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,IFT 211,Computer Science
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,CSC 204,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,GST 212,Geography
+200,IFT 211,Computer Science
+200,CSC 213,Computer Science
+200,EDU 201,Education Mathematics
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,CSC 202,Computer Science
+200,IFT 203,Computer Science
+200,CSC 203,Computer Science
+200,ENG 201,English
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,CSC 205,Computer Science
+200,CSC 204,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,EDU 201,Education Mathematics
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,IFT 211,Computer Science
+200,CSC 201,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 204,Computer Science
+200,CSC 205,Computer Science
+200,CSC 203,Computer Science
+200,GST 201,History & International Studies
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,HIS 202,History & International Studies
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,CSC 213,Computer Science
+200,MATH 201,Mathematics & Statistics
+200,CSC 202,Computer Science
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 202,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,ENG 201,English
+200,ARC 201,Architecture
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,EDU 201,Education Mathematics
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 204,Computer Science
+200,CSC 206,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,CSC 203,Computer Science
+200,IFT 211,Computer Science
+200,CSC 203,Computer Science
+200,GST 201,History & International Studies
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,CSC 202,Computer Science
+200,ARC 201,Architecture
+200,CSC 205,Computer Science
+200,GST 212,Geography
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,CSC 213,Computer Science
+200,IFT 203,Computer Science
+200,ENG 201,English
+200,ARC 201,Architecture
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,HIS 202,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,HIS 202,History & International Studies
+200,CSC 213,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 205,Computer Science
+200,CSC 201,Computer Science
+200,IFT 211,Computer Science
+200,CSC 201,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 204,Computer Science
+200,ENG 201,English
+200,CSC 299,Computer Science
+200,CSC 206,Computer Science
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,MATH 201,Mathematics & Statistics
+200,IFT 212,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,IFT 203,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,GST 212,Geography
+200,CSC 204,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,IFT 203,Computer Science
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,HIS 202,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,ENG 201,English
+200,CSC 206,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 213,Computer Science
+200,CSC 213,Computer Science
+200,GST 201,History & International Studies
+200,CSC 203,Computer Science
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,ARC 201,Architecture
+200,CSC 202,Computer Science
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,EDU 201,Education Mathematics
+200,GST 212,Geography
+200,ENG 201,English
+200,ARC 201,Architecture
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 201,Computer Science
+200,CSC 205,Computer Science
+200,CSC 299,Computer Science
+200,CSC 206,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,IFT 212,Computer Science
+200,HIS 202,History & International Studies
+200,IFT 211,Computer Science
+200,CSC 201,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,EDU 201,Education Mathematics
+200,IFT 203,Computer Science
+200,CSC 204,Computer Science
+200,CSC 205,Computer Science
+200,CSC 204,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,IFT 211,Computer Science
+200,IFT 211,Computer Science
+200,IFT 212,Computer Science
+200,IFT 203,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,CSC 205,Computer Science
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,MATH 201,Mathematics & Statistics
+200,CSC 204,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,CSC 201,Computer Science
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,EDU 201,Education Mathematics
+200,EDU 201,Education Mathematics
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,ARC 201,Architecture
+200,CSC 206,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,IFT 212,Computer Science
+200,GST 201,History & International Studies
+200,HIS 202,History & International Studies
+200,CSC 213,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,ENG 201,English
+200,IFT 203,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,CSC 201,Computer Science
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 205,Computer Science
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,ARC 201,Architecture
+200,HIS 202,History & International Studies
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,EDU 201,Education Mathematics
+200,CSC 299,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,CSC 201,Computer Science
+200,MATH 201,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,CSC 202,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,CSC 204,Computer Science
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+200,GST 201,History & International Studies
+200,IFT 203,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 203,Computer Science
+200,GST 212,Geography
+200,GST 212,Geography
+200,GST 201,History & International Studies
+200,CSC 203,Computer Science
+200,ENG 201,English
+200,CSC 213,Computer Science
+200,CSC 206,Computer Science
+200,IFT 212,Computer Science
+200,CSC 299,Computer Science
+200,CSC 201,Computer Science
+200,HIS 202,History & International Studies
+200,IFT 211,Computer Science
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 205,Computer Science
+200,CSC 202,Computer Science
+200,ARC 201,Architecture
+200,EDU 201,Education Mathematics
+200,MATH 202,Mathematics & Statistics
+200,GST 212,Geography
+200,IFT 203,Computer Science
+200,CSC 205,Computer Science
+200,IFT 211,Computer Science
+200,CSC 204,Computer Science
+200,EDU 201,Education Mathematics
+200,CSC 201,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,ARC 201,Architecture
+200,CSC 299,Computer Science
+200,MATH 202,Mathematics & Statistics
+200,HIS 202,History & International Studies
+200,GST 201,History & International Studies
+200,CSC 299,Computer Science
+200,IFT 212,Computer Science
+200,CSC 206,Computer Science
+200,CSC 213,Computer Science
+200,ENG 201,English
+200,HIS 202,History & International Studies
+200,CSC 201,Computer Science
+200,ARC 201,Architecture
+200,GST 212,Geography
+200,MATH 202,Mathematics & Statistics
+200,MATH 201,Mathematics & Statistics
+200,GST 201,History & International Studies
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,EDU 201,Education Mathematics
+200,CSC 204,Computer Science
+200,MATH 201,Mathematics & Statistics
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,CSC 203,Computer Science
+200,CSC 202,Computer Science
+200,GST 201,History & International Studies
+200,MATH 201,Mathematics & Statistics
+200,MATH 202,Mathematics & Statistics
+200,IFT 203,Computer Science
+200,GST 212,Geography
+200,IFT 211,Computer Science
+200,CSC 205,Computer Science
+300,CSC 307,Computer Science
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,BIO 303,Microbiology
+300,ARC 302,Architecture
+300,BIO 302,Biology
+300,CSC 311,Computer Science
+300,CSC 316,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,BUS 301,Business Administration
+300,CSC 312,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,DBS 304,Computer Science
+300,CSC 303,Computer Science
+300,CSC 317,Computer Science
+300,DBS 304,Computer Science
+300,BUS 301,Business Administration
+300,CSC 305,Computer Science
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 399,Computer Science
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,CSC 319,Computer Science
+300,ARC 302,Architecture
+300,CSC 317,Computer Science
+300,CSC 312,Computer Science
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,CSC 305,Computer Science
+300,BIO 302,Biology
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,DBS 304,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,GST 302,Political Science
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,CSC 312,Computer Science
+300,EDU 301,Education Chemistry
+300,BUS 301,Business Administration
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,ARC 302,Architecture
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 305,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 307,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,PHY 301,Physics with Electronics
+300,BIO 303,Microbiology
+300,CSC 304,Computer Science
+300,BUS 301,Business Administration
+300,EDU 301,Education Chemistry
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,ARC 302,Architecture
+300,CSC 317,Computer Science
+300,CSC 305,Computer Science
+300,BUS 301,Business Administration
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,PHY 301,Physics with Electronics
+300,CSC 399,Computer Science
+300,NUR 301,Nursing Sciences
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,BUS 301,Business Administration
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,CSC 317,Computer Science
+300,CSC 312,Computer Science
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,NUR 301,Nursing Sciences
+300,GST 302,Political Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,GST 302,Political Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,BIO 302,Biology
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 305,Computer Science
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,BIO 302,Biology
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,PHY 301,Physics with Electronics
+300,BUS 301,Business Administration
+300,CHE 301,Biochemistry
+300,BIO 302,Biology
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 303,Microbiology
+300,ARC 302,Architecture
+300,CSC 301,Computer Science
+300,MED 301,Medicine and Surgery
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,BUS 301,Business Administration
+300,CSC 399,Computer Science
+300,ARC 302,Architecture
+300,MED 301,Medicine and Surgery
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,EDU 301,Education Chemistry
+300,BIO 302,Biology
+300,GST 301,Economics
+300,CSC 316,Computer Science
+300,CSC 311,Computer Science
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,BUS 301,Business Administration
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 305,Computer Science
+300,DBS 304,Computer Science
+300,CSC 301,Computer Science
+300,CSC 319,Computer Science
+300,CSC 312,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 303,Computer Science
+300,CSC 304,Computer Science
+300,CSC 307,Computer Science
+300,DBS 304,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 305,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 312,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 303,Computer Science
+300,CSC 317,Computer Science
+300,CSC 319,Computer Science
+300,ARC 302,Architecture
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,BUS 301,Business Administration
+300,CSC 311,Computer Science
+300,GST 302,Political Science
+300,CSC 316,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,CSC 303,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,CSC 399,Computer Science
+300,CSC 312,Computer Science
+300,CSC 317,Computer Science
+300,CSC 312,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,EDU 301,Education Chemistry
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,GST 302,Political Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,BIO 303,Microbiology
+300,CSC 316,Computer Science
+300,CHE 301,Biochemistry
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,CSC 301,Computer Science
+300,CSC 399,Computer Science
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,MED 301,Medicine and Surgery
+300,GST 301,Economics
+300,NUR 301,Nursing Sciences
+300,CHE 301,Biochemistry
+300,CSC 317,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,PHY 301,Physics with Electronics
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,DBS 304,Computer Science
+300,CSC 307,Computer Science
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 311,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,CSC 307,Computer Science
+300,CSC 304,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,CSC 305,Computer Science
+300,BIO 302,Biology
+300,CSC 316,Computer Science
+300,CHE 301,Biochemistry
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,CSC 317,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BIO 302,Biology
+300,CSC 399,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 316,Computer Science
+300,BUS 301,Business Administration
+300,CSC 316,Computer Science
+300,CSC 399,Computer Science
+300,CSC 301,Computer Science
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,CSC 305,Computer Science
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,PHY 301,Physics with Electronics
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,NUR 301,Nursing Sciences
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 301,Economics
+300,MED 301,Medicine and Surgery
+300,CSC 304,Computer Science
+300,CSC 317,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 303,Computer Science
+300,CSC 304,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 305,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,NUR 301,Nursing Sciences
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,CSC 305,Computer Science
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,PHY 301,Physics with Electronics
+300,CHE 301,Biochemistry
+300,BIO 303,Microbiology
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 319,Computer Science
+300,CSC 305,Computer Science
+300,DBS 304,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,BIO 303,Microbiology
+300,GST 302,Political Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,CSC 311,Computer Science
+300,NUR 301,Nursing Sciences
+300,GST 301,Economics
+300,CHE 301,Biochemistry
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,CSC 319,Computer Science
+300,PHY 301,Physics with Electronics
+300,MED 301,Medicine and Surgery
+300,PHY 301,Physics with Electronics
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CSC 303,Computer Science
+300,GST 302,Political Science
+300,BIO 302,Biology
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,CSC 312,Computer Science
+300,EDU 301,Education Chemistry
+300,CSC 304,Computer Science
+300,CSC 316,Computer Science
+300,CSC 301,Computer Science
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,CSC 305,Computer Science
+300,BUS 301,Business Administration
+300,CHE 301,Biochemistry
+300,BIO 302,Biology
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 301,Computer Science
+300,CSC 319,Computer Science
+300,BUS 301,Business Administration
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,DBS 304,Computer Science
+300,BIO 303,Microbiology
+300,CSC 316,Computer Science
+300,CSC 305,Computer Science
+300,CSC 307,Computer Science
+300,CSC 311,Computer Science
+300,DBS 304,Computer Science
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 312,Computer Science
+300,CSC 304,Computer Science
+300,GST 302,Political Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,CSC 317,Computer Science
+300,ARC 302,Architecture
+300,EDU 301,Education Chemistry
+300,MED 301,Medicine and Surgery
+300,GST 301,Economics
+300,CSC 399,Computer Science
+300,CSC 317,Computer Science
+300,GST 302,Political Science
+300,CSC 312,Computer Science
+300,CSC 303,Computer Science
+300,CSC 319,Computer Science
+300,DBS 304,Computer Science
+300,CSC 311,Computer Science
+300,CSC 307,Computer Science
+300,BIO 302,Biology
+300,BIO 303,Microbiology
+300,CHE 301,Biochemistry
+300,PHY 301,Physics with Electronics
+300,NUR 301,Nursing Sciences
+300,MED 301,Medicine and Surgery
+300,EDU 301,Education Chemistry
+300,EDU 301,Education Chemistry
+300,ARC 302,Architecture
+300,BUS 301,Business Administration
+300,GST 302,Political Science
+300,CSC 317,Computer Science
+300,CSC 399,Computer Science
+300,GST 301,Economics
+300,CSC 301,Computer Science
+300,CSC 316,Computer Science
+300,CSC 304,Computer Science
+300,CSC 305,Computer Science
+300,BIO 303,Microbiology
+300,CSC 312,Computer Science
+300,CSC 316,Computer Science
+300,GST 302,Political Science
+300,CSC 311,Computer Science
+300,NUR 301,Nursing Sciences
+300,PHY 301,Physics with Electronics
+300,CSC 307,Computer Science
+300,BIO 303,Microbiology
+300,DBS 304,Computer Science
+300,BIO 302,Biology
+300,CSC 319,Computer Science
+300,CSC 303,Computer Science
+300,CSC 305,Computer Science
+300,CHE 301,Biochemistry
+300,CSC 304,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 407,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,CSC 499,Computer Science
+400,CSC 416,Computer Science
+400,CYB 401,Computer Science
+400,CSC 401,Computer Science
+400,BUS 401,Business Administration
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,CSC 402,Computer Science
+400,CSC 403,Computer Science
+400,EDU 401,Education Physics
+400,CSC 477,Computer Science
+400,MED 402,Medicine and Surgery
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,ARC 401,Architecture
+400,CSC 407,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,NUR 402,Nursing Sciences
+400,CSC 499,Computer Science
+400,CSC 404,Computer Science
+400,CYB 401,Computer Science
+400,CSC 407,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,EDU 401,Education Physics
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,CSC 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 419,Computer Science
+400,CSC 407,Computer Science
+400,CSC 417,Computer Science
+400,CSC 402,Computer Science
+400,CSC 405,Computer Science
+400,CSC 419,Computer Science
+400,CSC 477,Computer Science
+400,CSC 499,Computer Science
+400,CSC 499,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,BUS 401,Business Administration
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 412,Computer Science
+400,ENG 401,English
+400,CSC 470,Computer Science
+400,EDU 401,Education Physics
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,CSC 417,Computer Science
+400,MED 402,Medicine and Surgery
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,NUR 402,Nursing Sciences
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 412,Computer Science
+400,CSC 405,Computer Science
+400,CSC 419,Computer Science
+400,CSC 404,Computer Science
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 407,Computer Science
+400,ENG 401,English
+400,CSC 499,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CYB 401,Computer Science
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 402,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 416,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 403,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 412,Computer Science
+400,CSC 402,Computer Science
+400,CSC 477,Computer Science
+400,CSC 470,Computer Science
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 411,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,CSC 470,Computer Science
+400,EDU 401,Education Physics
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,BUS 401,Business Administration
+400,BUS 401,Business Administration
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 407,Computer Science
+400,CYB 401,Computer Science
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CSC 499,Computer Science
+400,BUS 401,Business Administration
+400,CSC 403,Computer Science
+400,CSC 405,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 411,Computer Science
+400,CSC 401,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,BUS 401,Business Administration
+400,CSC 403,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,BUS 401,Business Administration
+400,CSC 401,Computer Science
+400,EDU 401,Education Physics
+400,MED 402,Medicine and Surgery
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,ARC 401,Architecture
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,ARC 401,Architecture
+400,CYB 401,Computer Science
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 416,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,BUS 401,Business Administration
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,EDU 401,Education Physics
+400,CSC 407,Computer Science
+400,ARC 401,Architecture
+400,NUR 402,Nursing Sciences
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,MED 402,Medicine and Surgery
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 402,Computer Science
+400,CSC 416,Computer Science
+400,CSC 404,Computer Science
+400,CSC 401,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 419,Computer Science
+400,CSC 407,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 405,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 407,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,CSC 401,Computer Science
+400,ARC 401,Architecture
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,MED 402,Medicine and Surgery
+400,CSC 412,Computer Science
+400,CSC 403,Computer Science
+400,CSC 417,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 411,Computer Science
+400,CSC 416,Computer Science
+400,CSC 470,Computer Science
+400,HIS 401,History & International Studies
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,BIO 401,Biology
+400,CSC 412,Computer Science
+400,CSC 403,Computer Science
+400,CSC 405,Computer Science
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,ENG 401,English
+400,CSC 401,Computer Science
+400,NUR 402,Nursing Sciences
+400,ARC 401,Architecture
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,MED 402,Medicine and Surgery
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,ENG 401,English
+400,CSC 412,Computer Science
+400,HIS 401,History & International Studies
+400,CSC 470,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,BIO 401,Biology
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 416,Computer Science
+400,CSC 412,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 419,Computer Science
+400,CSC 477,Computer Science
+400,CSC 499,Computer Science
+400,CSC 470,Computer Science
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,BIO 401,Biology
+400,CSC 417,Computer Science
+400,HIS 401,History & International Studies
+400,NUR 402,Nursing Sciences
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,ENG 401,English
+400,CSC 402,Computer Science
+400,CSC 416,Computer Science
+400,CSC 401,Computer Science
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,MED 402,Medicine and Surgery
+400,CSC 403,Computer Science
+400,ARC 401,Architecture
+400,BUS 401,Business Administration
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 407,Computer Science
+400,EDU 401,Education Physics
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 470,Computer Science
+400,CSC 402,Computer Science
+400,CSC 411,Computer Science
+400,CSC 412,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 477,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,CSC 499,Computer Science
+400,MED 402,Medicine and Surgery
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,CSC 419,Computer Science
+400,NUR 402,Nursing Sciences
+400,CSC 407,Computer Science
+400,CSC 412,Computer Science
+400,CYB 401,Computer Science
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 470,Computer Science
+400,CSC 411,Computer Science
+400,CSC 477,Computer Science
+400,CSC 412,Computer Science
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 499,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,CSC 419,Computer Science
+400,CSC 402,Computer Science
+400,CSC 404,Computer Science
+400,CSC 405,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,EDU 401,Education Physics
+400,BUS 401,Business Administration
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,ARC 401,Architecture
+400,MED 402,Medicine and Surgery
+400,NUR 402,Nursing Sciences
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,BIO 401,Biology
+400,CSC 411,Computer Science
+400,ARC 401,Architecture
+400,CSC 477,Computer Science
+400,CSC 419,Computer Science
+400,CSC 401,Computer Science
+400,CSC 403,Computer Science
+400,CSC 416,Computer Science
+400,CSC 417,Computer Science
+400,CYB 401,Computer Science
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,CSC 407,Computer Science
+400,CSC 499,Computer Science
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 412,Computer Science
+400,MED 402,Medicine and Surgery
+400,CSC 416,Computer Science
+400,ENG 401,English
+400,CYB 401,Computer Science
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,NUR 402,Nursing Sciences
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,CSC 499,Computer Science
+400,CSC 407,Computer Science
+400,BUS 401,Business Administration
+400,EDU 401,Education Physics
+400,CSC 417,Computer Science
+400,CSC 416,Computer Science
+400,CSC 403,Computer Science
+400,CSC 401,Computer Science
+400,CSC 405,Computer Science
+400,CSC 404,Computer Science
+400,CSC 402,Computer Science
+400,CSC 419,Computer Science
+400,ARC 401,Architecture
+400,CSC 412,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,BIO 401,Biology
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,NUR 402,Nursing Sciences
+400,MED 402,Medicine and Surgery
+400,ARC 401,Architecture
+400,CSC 477,Computer Science
+400,MED 402,Medicine and Surgery
+400,BUS 401,Business Administration
+400,CSC 404,Computer Science
+400,CSC 403,Computer Science
+400,NUR 402,Nursing Sciences
+400,CSC 416,Computer Science
+400,CSC 402,Computer Science
+400,CSC 417,Computer Science
+400,CSC 419,Computer Science
+400,CYB 401,Computer Science
+400,CSC 412,Computer Science
+400,CSC 477,Computer Science
+400,CSC 405,Computer Science
+400,CSC 411,Computer Science
+400,CSC 470,Computer Science
+400,CSC 499,Computer Science
+400,CSC 401,Computer Science
+400,HIS 401,History & International Studies
+400,ENG 401,English
+400,HIS 401,History & International Studies
+400,CSC 407,Computer Science
+400,BIO 401,Biology
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+Level,Course,Department
+200,BIO 300,Biology

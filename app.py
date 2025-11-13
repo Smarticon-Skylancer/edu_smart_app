@@ -17,7 +17,7 @@ elif st.session_state["page"] == "Login":
     login_page()
 elif st.session_state["page"] == "Register":
     register_page()
-elif st.session_state["page"] == "admin":
+elif st.session_state["page"] == "Tutor":
     admin_dashboard()
 elif st.session_state["page"] == "Student":
     user_dashboard()
