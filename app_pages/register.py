@@ -90,14 +90,11 @@ def register_page():
         gender = st.selectbox("Select Gender:", ["Male", " Female", "Other"])
         tutor_username = st.text_input("Tutor Username")
         tutor_id = st.text_input("Tutor ID")
-        if len(tutor_id) != 10:
-            st.error("Tutor ID must be exactly 10 characters long.")
-        else:
-            faculty = st.selectbox("Select Faculty:", list(faculties.keys()))
-            tutor_department = st.selectbox("Select Department:", faculties[faculty])
-            tutor_email = st.text_input("Tutor Email")
-            tutor_password = st.text_input("Choose a Password", type="password")
-            tutor_confirm_password = st.text_input("Confirm Password", type="password")
+        faculty = st.selectbox("Select Faculty:", list(faculties.keys()))
+        tutor_department = st.selectbox("Select Department:", faculties[faculty])
+        tutor_email = st.text_input("Tutor Email")
+        tutor_password = st.text_input("Choose a Password", type="password")
+        tutor_confirm_password = st.text_input("Confirm Password", type="password")
 
         col1, col2 = st.columns(2)
         with col1:
@@ -116,6 +113,8 @@ def register_page():
                 st.error("🔤 Password must contain both letters and numbers.")
             elif "@" not in tutor_email or "." not in tutor_email:
                 st.error("📧 Enter a valid email address.")
+            elif len(tutor_id) != 8:
+                st.error("Tutor ID must be exactly 8 characters long.")
             else:
                 # Call db.py add_tutor
                 add_tutor(firstname, surname, gender, tutor_username, tutor_password, tutor_department, faculty, tutor_id, tutor_email, role="Tutor")
