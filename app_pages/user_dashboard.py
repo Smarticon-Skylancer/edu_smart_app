@@ -122,7 +122,7 @@ def user_dashboard():
             for i, (title, question, assigned_by, date_posted, deadline, assignment_marks, course,level) in enumerate(assignments, start=1):
                 with st.expander(f"📝 {i}. {question} from {department}, {level} level, Marks Attainable : {assignment_marks}, Best Submitted before {deadline}"):
                     answers = st.text_area("Enter Your Answers : ", key=f"answers_{i}")
-                    submit = st.button("Submit Assignment", key=f"submit_{i}")
+                    submit = st.button("Submit Assignment", key=f"submit_{i}", use_container_width=True)
                     if answers and submit :
                         add_submission(student_name, department,level,question,answers,course,assignment_marks)
                         st.write(f"Student_name : {student_name} Department : {department} Level : {level} Question : {question} Answers : {answers} Course : {course} Assignment Marks : {assignment_marks}")

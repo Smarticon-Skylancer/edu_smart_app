@@ -122,7 +122,7 @@ def register_page():
                 # Call db.py add_tutor
                 adding_tutor = add_tutor(firstname, surname, gender,tutor_id, tutor_username, tutor_password, tutor_department, faculty,tutor_email,role)
                 if adding_tutor:
-                    st.success("✅ Tutor Account created Successfully !!!")
+                    st.success("✅ Tutor Account created Successfully !!! you can now proceed to login")
                     t.sleep(2)
                     st.rerun()
 

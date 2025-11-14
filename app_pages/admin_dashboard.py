@@ -14,7 +14,7 @@ def post_an_assignment():
     assignment_id = st.number_input(label="Enter Assignment ID : ", placeholder="Enter any number")
     department = st.session_state.get("department")
     level = st.selectbox("Select level : ",[100,200,300,400,500,600])
-    assigned_by = st.session_state.get("user")
+    assigned_by = st.session_state.get("Student")
     course = st.text_input("Enter Course for the Assignment : ")
     assignment_marks = st.number_input("Enter Marks Allocated for this Assignment : ",min_value = 0)
     question = st.text_area("Enter Question", height=300, placeholder="Enter assignment Questions here...")
@@ -67,8 +67,8 @@ def admin_dashboard():
     inject_css("admin") 
 
     df_courses = load_courses().sort_values(by=['Level'])
-    admin_option = st.sidebar.radio("Navigation", ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a User", "Remove a User","Post Announcement","Post Assignments","View Submissions", "Logout"])
-    user = st.session_state.get("user")
+    admin_option = st.sidebar.radio("Navigation", ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a Student", "Remove a Student","Post Announcement","Post Assignments","View Submissions", "Logout"])
+    Student = st.session_state.get("Student")
     first_name = st.session_state.get("firstname")
     surname = st.session_state.get("surname")
     department = st.session_state.get("department")
@@ -80,7 +80,7 @@ def admin_dashboard():
     Total_assigned = tutor_fetch_assignments(faculty,department)
     if admin_option == "Dashboard":
         st.title("📊 Course Tutor Dashboard")
-        st.header(f'Welcome {user}')
+        st.header(f'Welcome {Student}')
         st.info(f'Full Name : {first_name} {surname}')
         st.info(f"Faculty : {faculty}")
         st.info(f"Department : {department}")
@@ -99,10 +99,10 @@ def admin_dashboard():
     elif admin_option == "Student Records":
         st.header(" 👥 Registered Students")
         department = st.session_state.get("department")
-        users = fetch_all_users(department)
+        Students = fetch_all_users(department)
         
-        if users:
-            df = pd.DataFrame(users, columns=["Firstname", "Surname", "Username", "Student_id", "Department", "Level", "Type_of_student", "Email", "Faculty", "Role"])
+        if Students:
+            df = pd.DataFrame(Students, columns=["Firstname", "Surname", "Username", "Student_id", "Department", "Level", "Type_of_student", "Email", "Faculty", "Role"])
             
             # Set index properly
             df = df.set_index(pd.RangeIndex(1, len(df) + 1))
@@ -118,7 +118,7 @@ def admin_dashboard():
             # Display styled dataframe
             st.dataframe(styled_df)
         else:
-            st.info('ℹ️ No Registered Users yet !!! ')
+            st.info('ℹ️ No Registered Students yet !!! ')
         st.header(" 🎓 Students Performance")
         department = st.session_state.get("department")
         performance = fetch_scores_table(department)
@@ -198,25 +198,27 @@ def admin_dashboard():
         else:
             st.info("ℹ️ No Submissions Have been made yet !")
             
-    elif admin_option == "Add a User":
-        st.subheader("➕ Add a User")
+    elif admin_option == "Add a Student":
+        st.subheader("➕ Add a Student")
         st.info("Feature coming soon!")                           
         
-    elif admin_option == "Remove a User":
+    elif admin_option == "Remove a Student":
         inject_css("admin")
-        st.subheader("➖ Remove a User")
-        users = fetch_all_users(faculty)
-        df_users = pd.DataFrame(users, columns=["Username", "Faculty", "Level", "Type_of_student","Email","Department","Role"])
-        if not df_users.empty:
-            user_to_remove = st.selectbox("Select User to remove", df_users["Username"].unique())
-            if st.button("Remove User", key='Remove_user', use_container_width=True):
-                remove_user(user_to_remove)
-                st.success(f"User {user_to_remove} removed successfully!")
+        st.subheader("➖ Remove a Student")
+        Students = fetch_all_users(department)
+        df_Students = pd.DataFrame(Students, columns=["Firstname", "Surname", "Username", "Student_id", "Department", "Level", "Type_of_student", "Email", "Faculty", "Role"])
+        if not df_Students.empty:
+            Student_to_remove = st.selectbox("Select Student to remove", df_Students["Username"].unique())
+            role = "Student"
+            if st.button("Remove Student", key='Remove_Student', use_container_width=True):
+                remove_user(Student_to_remove, role)
+                st.success(f"{role} {Student_to_remove} removed successfully!")
                 import time
                 time.sleep(3)
                 st.rerun()
+                    
         else:
-            st.info("ℹ️ No users available to remove.")
+            st.info("ℹ️ No Students available to remove.")
 
     elif admin_option == "Logout":
         st.session_state.clear()
