@@ -7,6 +7,9 @@ import time as t
 
 def register_page():
     inject_css("register")
+
+    # Center the registration card for a cleaner layout
+    st.markdown('<div class="centered-card">', unsafe_allow_html=True)
     st.title("📝 Registration Page")
 
     role_choice = st.selectbox("Register as:", ["Student", "Course Tutor"])
@@ -72,16 +75,30 @@ def register_page():
             elif len(student_id) != 10:
                 st.error("Student ID must be exactly 10 characters long.")
             else:
-                # Call db.py add_user
-                adding_user = add_user(firstname, surname, username, student_id, password,role, gender, faculty, department, level,email, type_of_student)
-                if adding_user:  
-                    st.success("✅ Account created successfully !!! you can now proceed to login")
-                    t.sleep(2)
-                    st.rerun()
+                # call add_user with correct argument order using keyword args to avoid mismatch
+                add_user(
+                    firstname=firstname,
+                    surname=surname,
+                    username=username,
+                    student_id=student_id,
+                    password=password,
+                    role=role,
+                    gender=gender,
+                    faculty=faculty,
+                    department=department,
+                    level=level,
+                    email=email,
+                    type_of_student=type_of_student,
+                )
+                st.success("✅ Account created successfully !!! you can now proceed to login")
+                t.sleep(2)
+                st.rerun()
 
         if back_btn:
             st.session_state["page"] = "Login"
             st.rerun()
+
+    # (wrapper will be closed after all conditional branches)
 
     # =====================================
     # TUTOR REGISTRATION SECTION
@@ -127,3 +144,6 @@ def register_page():
         if back_btn:
             st.session_state["page"] = "Login"
             st.rerun()
+        
+    # Close centered wrapper (after tutor branch handled)
+    st.markdown('</div></div>', unsafe_allow_html=True)

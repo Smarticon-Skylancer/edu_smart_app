@@ -8,6 +8,7 @@ import time as t
 def login_page():
     inject_css("login")
 
+    # Center the login card vertically and horizontally
     st.markdown('<div class="centered-card">', unsafe_allow_html=True)
     st.title("🔐 Login to EduSmart System")
 
@@ -66,4 +67,7 @@ def login_page():
                     st.rerun()
                 else:
                     st.error("❌ Login failed. Check username and password.")
+
+    # close the centered wrapper
+    st.markdown('</div></div>', unsafe_allow_html=True)
 

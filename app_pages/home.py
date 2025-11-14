@@ -9,7 +9,7 @@ def home_page():
     inject_css("home")
     st.markdown("""
             <div style='text-align:center'>
-            <h1>🎓 Welcome to Smart GPA Calculator</h1>
+            <h1>🎓 Welcome to Edu Smart App</h1>
             <p style='font-size:18px; color:#555;'>
                 Your all-in-one education assistant for managing grades, calculating GPA,
                 and tracking your academic performance with ease.
@@ -26,6 +26,12 @@ def home_page():
     - ⚒️ **Assignment System**  – Make and Submit Assignments seamlessly.
     - 🔒 **Secure Login & Registration** – Keep your records private.  
     - 💡 **User-Friendly Interface** – Simple and modern layout.
+    - 📢 **Announcements & Events** – Stay updated with the latest news.
+    - 🤖 **AI Assistant** – Get help with your academic queries.
+    - 🗓️ **Timetable Generator** – Organize your class schedule efficiently.
+    - 💬 **Chatroom** – Connect and collaborate with peers and tutors.
+    - 📝 **Grade Tracking** – Monitor your academic progress over time.
+    - 🔔 **Notifications** – Receive timely alerts for assignments and events.
     """)
 
     st.write("---")

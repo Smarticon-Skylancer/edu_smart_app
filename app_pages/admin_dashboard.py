@@ -1,5 +1,6 @@
 import streamlit as st
 from styles import inject_css
+from app_pages.ui_helpers import render_sidebar
 from db import fetch_all_users, remove_user, tutor_fetch_assignments,add_score,fetch_scores_table
 from courses import load_courses, save_courses
 from courses import get_courses_by_department, display_courses
@@ -9,40 +10,61 @@ import pandas as pd
 
 def post_an_assignment():
     st.header("📄 Post a New Assignment")
-    title = st.text_input("Enter title of Assigment : ")
-    dead_line = st.date_input("Enter Dead Line for Submission : ")
     faculty = st.session_state.get("faculty")
-    assignment_id = st.text_input(label="Enter Assignment ID : ", placeholder="Enter any number")
     department = st.session_state.get("department")
-    level = st.selectbox("Select level : ",[100,200,300,400,500,600])
     assigned_by = st.session_state.get("user")
-    course = st.text_input("Enter Course for the Assignment : ")
-    assignment_marks = st.number_input("Enter Marks Allocated for this Assignment : ",min_value = 0)
-    question = st.text_area("Enter Question", height=300, placeholder="Enter assignment Questions here...")
-    if st.button("📩 Post", use_container_width=True):
-        if not title or not question or not dead_line or not department or not course or not assignment_marks or not level:
-            st.warning("⚠️ Please fill in all fields.")
+
+    # Form layout in two columns
+    col1, col2 = st.columns([2, 1])
+    with col1:
+        title = st.text_input("Assignment Title")
+        question = st.text_area("Question / Description", height=220, placeholder="Enter assignment details here...")
+        course = st.text_input("Course (e.g., BIO101)")
+    with col2:
+        assignment_id = st.text_input("Assignment ID", placeholder="Unique ID (e.g., A001)")
+        level = st.selectbox("Level", [100,200,300,400,500,600])
+        assignment_marks = st.number_input("Total Marks", min_value=0)
+        dead_line = st.date_input("Submission Deadline")
+
+    if st.button("📩 Post Assignment", use_container_width=True):
+        if not all([title, question, course, assignment_id]):
+            st.warning("⚠️ Please fill in all required fields: Title, Question, Course, Assignment ID.")
         else:
-            add_assignment(assignment_id,faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks)
-            
-            st.success(f"{title} successfully posted!")
-    
+            try:
+                add_assignment(assignment_id, faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks)
+                st.success(f"{title} successfully posted!")
+            except Exception as e:
+                st.error(f"Could not post assignment: {e}")
+
     st.write("### 📜 Recent Assignments")
     faculty = st.session_state.get("faculty")
     department = st.session_state.get("department")
     assignments = tutor_fetch_assignments(faculty,department)
     if assignments:
+        # show each assignment as a compact card with actions
         for ass in assignments:
-            st.info(f"Assignment Title : {ass[5]} \n\n Level : {ass[4]} \n\n Assigned By : Tutor {ass[7]} ")
-            st.warning("You cannot undo this Action, this would erase this assignment from the Students dashboard too !")
-            confirmation_button = st.checkbox("I am sure", key=f"confirm_{ass}")
-            delete_button = st.button('DELETE', key=f"delete_{ass}", use_container_width=True)
-            if delete_button and confirmation_button:
-                remove_assignment(title, question)
-                st.success("Assignment Deleted Successfully !")
-                st.rerun()
+            (ass_id, fac, course_name, dept, lvl, title, question, assigned_by, deadline, marks) = ass
+            with st.expander(f"{title} — {course_name} ({lvl}) — ID: {ass_id}"):
+                st.markdown(f"**Question:** {question}")
+                st.markdown(f"**Deadline:** {deadline} &nbsp;&nbsp; **Marks:** {marks} &nbsp;&nbsp; **Assigned by:** {assigned_by}")
+                col_a, col_b = st.columns([3,1])
+                with col_b:
+                    if st.button("Delete", key=f"delete_{ass_id}"):
+                        # confirmation step
+                        confirm = st.checkbox("I confirm deletion of this assignment", key=f"confirm_del_{ass_id}")
+                        if confirm:
+                            try:
+                                # remove by title & question (db supports this currently)
+                                remove_assignment(title, question)
+                                st.success("Assignment deleted")
+                                try:
+                                    st.experimental_rerun()
+                                except Exception:
+                                    st.stop()
+                            except Exception as e:
+                                st.error(f"Could not delete: {e}")
     else:
-        st.write("No assignments yet.")
+        st.info("No assignments yet.")
 
 def post_an_announcement():
     category = st.selectbox("Select Category:", ['Announcement', 'Event'])
@@ -69,7 +91,6 @@ def admin_dashboard():
     inject_css("admin") 
 
     df_courses = load_courses().sort_values(by=['Level'])
-    admin_option = st.sidebar.radio("Navigation", ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a Student", "Remove a Student","Post Announcement","Post Assignments","View Submissions", "Logout"])
     user = st.session_state.get("user")
     first_name = st.session_state.get("firstname")
     surname = st.session_state.get("surname")
@@ -77,22 +98,38 @@ def admin_dashboard():
     email = st.session_state.get("email")
     faculty = st.session_state.get("faculty")
     tutor_id = st.session_state.get("tutor_ID")
+
+    # Compact, consistent sidebar using helper
+    nav_items = ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a Student", "Remove a Student","Post Announcement","Post Assignments","View Submissions"]
+    admin_option = render_sidebar(display_name=f"{first_name} {surname}", role="Tutor", faculty=faculty, department=department, nav_options=nav_items, key_prefix="admin")
     Total_courses = get_courses_by_department()
     Total_students = fetch_all_users(department)
     Total_assigned = tutor_fetch_assignments(faculty,department)
     Total_submissions = fetch_submissions(department,level=None)
     if admin_option == "Dashboard":
         st.title("📊 Course Tutor Dashboard")
-        st.header(f'Welcome {user} ')
-        st.info(f'Full Name : {first_name} {surname}')
-        st.info(f"Faculty : {faculty}")
-        st.info(f"Department : {department}")
-        st.info(f"Email : {email}")
-        st.info(f"Tutor ID : {tutor_id}")
-        st.info(f"Total Assignments Posted : {len(Total_assigned)}")
-        st.info(f"Total Students in Department : {len(Total_students)}")
-        st.info(f"Total Courses in Department : {len(Total_courses)}")
-        st.info(f"Total Submissions Received : {len(Total_submissions)}")
+        st.markdown(f"<div class='sub-title'>Welcome back, <strong>{first_name} {surname}</strong></div>", unsafe_allow_html=True)
+
+        # Compact metrics row
+        c1, c2, c3, c4 = st.columns(4, gap="small")
+        c1.metric("Assignments Posted", len(Total_assigned))
+        c2.metric("Students", len(Total_students))
+        c3.metric("Courses", len(Total_courses))
+        c4.metric("Submissions", len(Total_submissions))
+
+        st.markdown("---")
+        # Quick info card
+        st.markdown(
+            f"""
+            <div class='user-info-card'>
+              <h2>📋 Tutor Overview</h2>
+              <p><strong>Full Name:</strong> {first_name} {surname}&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<strong>Department:</strong> {department}</p>
+              <p><strong>Faculty:</strong> {faculty} &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <strong>Tutor ID:</strong> {tutor_id} </p>
+              <p><strong>Email:</strong> {email}</p>
+            </div>
+            """,
+            unsafe_allow_html=True,
+        )
         
     
     elif admin_option == "Course Records":
@@ -188,17 +225,30 @@ def admin_dashboard():
         submissions = fetch_submissions(department,level)
         st.header("Submission Page")
         if submissions:
-            for i, (student_name,department,level,question,answers,date_submitted,course,assignment_marks) in enumerate(submissions, start=1):
-                with st.expander(f"📝 {i}. {question}  —  Answered by {student_name} from {department}, {level} level"):
-                    st.write(f"**Answers:** {answers}")
+            # submissions table columns (as created in db):
+            # student_id, assignment_id, student_name, department, question, course, level, answers, assignment_marks, date_submitted
+            for i, (student_id, assignment_id, student_name, dept, question, course_name, lvl, answers, assignment_marks, date_submitted) in enumerate(submissions, start=1):
+                with st.expander(f"📝 {i}. {question} — Answered by {student_name} ({dept}, {lvl})"):
+                    st.write(f"**Answers:**")
+                    st.write(answers)
                     st.markdown(f"**Date Submitted:** {date_submitted}")
-                    st.markdown(f"**Assignment Marks:** {assignment_marks}")
-                    score = st.number_input(f"Enter Score : ", min_value=0,max_value=assignment_marks, key=f"score_{i}") 
-                    submit_btn = st.button("Submit score", key=f"submit_{i}", use_container_width=True)
-                    if submit_btn and score :
-                        add_score(student_name,department,score,course)
-                        st.success(f"✅ {student_name} scored Sucessfully !")
-                        remove_submission(question,answers)
+                    st.markdown(f"**Assignment Marks (max):** {assignment_marks}")
+                    col1, col2 = st.columns([3,1])
+                    with col1:
+                        score = st.number_input(f"Enter Score for {student_name}", min_value=0, max_value=assignment_marks, key=f"score_{i}")
+                    with col2:
+                        if st.button("Submit score", key=f"submit_{assignment_id}"):
+                            try:
+                                add_score(student_name, dept, score, course_name)
+                                st.success(f"✅ {student_name} scored successfully!")
+                                # remove submission after scoring
+                                remove_submission(question, answers)
+                                try:
+                                    st.experimental_rerun()
+                                except Exception:
+                                    st.stop()
+                            except Exception as e:
+                                st.error(f"Could not save score: {e}")
         else:
             st.info("ℹ️ No Submissions Have been made yet !")
             
@@ -223,7 +273,3 @@ def admin_dashboard():
                     
         else:
             st.info("ℹ️ No Students available to remove.")
-
-    elif admin_option == "Logout":
-        st.session_state.clear()
-        st.rerun()
