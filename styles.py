@@ -92,7 +92,9 @@ def inject_css(role=None):
             background-color: red;
         }}
         .stAlert info{{
-            color : "f7f7f7";
+            color : {sidebar_bg};
+            font-size: 30px;
+            
         }}
         /* Registration title */
         .register-title{{

@@ -1,7 +1,9 @@
 import streamlit as st
 from db import login_user, login_tutor
 from styles import inject_css
-from app_pages.home import home_page        
+from app_pages.home import home_page
+import time as t     
+     
 
 def login_page():
     inject_css("login")
@@ -13,12 +15,9 @@ def login_page():
     username_input = st.text_input("Username")
     password_input = st.text_input("Password", type="password")
 
-    col1, col2 = st.columns([1, 1], gap='small')
-    with col1:
-        login_clicked = st.button("🔑 Login", use_container_width=True)
+    login_clicked = st.button("🔑 Login", use_container_width=True)
         
-    with col2:
-        back_clicked = st.button("📝 Register", use_container_width=True)
+        
         
     if login_clicked:
         if not username_input or not password_input:
@@ -62,13 +61,9 @@ def login_page():
                         "role": role,
                         "page": "Tutor"
                     })
-                    st.success("✅ Login successful!")
+                    st.success("✅ Login successful !!!")
+                    t.time.sleep(2)
                     st.rerun()
                 else:
                     st.error("❌ Login failed. Check username and password.")
-
-
-    if back_clicked:
-        st.session_state["page"] = "Register"
-        st.rerun()
 

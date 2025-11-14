@@ -118,7 +118,7 @@ def admin_dashboard():
             # Display styled dataframe
             st.dataframe(styled_df)
         else:
-            st.info('No Registered Users yet !!! ')
+            st.info('ℹ️ No Registered Users yet !!! ')
         st.header(" 🎓 Students Performance")
         department = st.session_state.get("department")
         performance = fetch_scores_table(department)
@@ -139,7 +139,7 @@ def admin_dashboard():
             if st.button("Delete Records", key=f"delete"):
                 remove_grades()
         else:
-            st.info(' No Academic Records yet !!! ')
+            st.info('ℹ️ No Academic Records yet !!! ')
 
 
     elif admin_option == "Add a Course":
@@ -154,7 +154,6 @@ def admin_dashboard():
                 else:
                     df_courses = pd.concat([df_courses, pd.DataFrame([{"Level": new_level, "Course": new_course, "Department": department}])], ignore_index=True)
                     save_courses(df_courses)
-                    st.success(f"Course {new_course} added successfully!")
             else:
                 st.error("⚠️ Please fill all fields.")
 
@@ -168,7 +167,7 @@ def admin_dashboard():
                 save_courses(courses_df)
                 st.success(f"Course {course_to_remove} removed successfully!")
         else:
-            st.info("No courses available to remove.")
+            st.info("ℹ️ No courses available to remove.")
             
     elif admin_option == "Post Announcement":
         post_an_announcement()
@@ -197,7 +196,7 @@ def admin_dashboard():
                         st.success(f"✅ {student_name} scored Sucessfully !")
                         remove_submission(question,answers)
         else:
-            st.info("No Submissions Have been made yet !")
+            st.info("ℹ️ No Submissions Have been made yet !")
             
     elif admin_option == "Add a User":
         st.subheader("➕ Add a User")
@@ -217,7 +216,7 @@ def admin_dashboard():
                 time.sleep(3)
                 st.rerun()
         else:
-            st.info("No users available to remove.")
+            st.info("ℹ️ No users available to remove.")
 
     elif admin_option == "Logout":
         st.session_state.clear()

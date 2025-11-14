@@ -129,7 +129,6 @@ def add_user(firstname, surname, username, student_id, password,role, gender, fa
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (firstname, surname, username, student_id, hashed, role, gender, faculty, department, level, email, type_of_student))
         conn.commit()
-        st.success("✅ Student account created successfully!")
     except sqlite3.IntegrityError as e:
         st.error(f"⚠️ Could not create user: {e}")
     conn.close()
@@ -147,20 +146,17 @@ def add_tutor(firstname, surname, gender,tutor_id, tutor_username, tutor_passwor
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (firstname, surname, gender, tutor_id, tutor_username, hashed, tutor_department, faculty, tutor_email, role))
         conn.commit()
-        st.success("✅ Tutor account created successfully!")
     except sqlite3.IntegrityError as e:
         st.error(f"⚠️ Could not create tutor: {e}")
     conn.close()
 
 
-def remove_user(username, role="User"):
+def remove_user(username, role):
     conn = sqlite3.connect("students.db")
     c = conn.cursor()
     c.execute("DELETE FROM uses WHERE username=? AND role=?", (username, role))
     conn.commit()
     conn.close()
-    st.success(f"✅ {username} has been removed successfully.")
-
 
 def login_user(username, password):
     conn = sqlite3.connect("students.db")
@@ -217,7 +213,6 @@ def add_announcement(category, title, message, posted_by):
               (category, title, message, posted_by))
     conn.commit()
     conn.close()
-    st.success("✅ Announcement posted successfully!")
 
 
 def fetch_announcements():
@@ -244,7 +239,6 @@ def add_assignment(title, question, assignment_id, assigned_by, dead_line, assig
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (title, question, assignment_id, assigned_by, dead_line, assignment_marks, faculty, department, course, level))
         conn.commit()
-        st.success("✅ Assignment added successfully!")
     except sqlite3.IntegrityError:
         st.error("⚠️ Assignment ID already exists!")
     conn.close()
@@ -256,7 +250,6 @@ def remove_assignment(title, question):
     c.execute("DELETE FROM assignments WHERE title=? AND question=?", (title, question))
     conn.commit()
     conn.close()
-    st.success("✅ Assignment removed successfully!")
 
 
 def tutor_fetch_assignments(faculty, department):
@@ -297,7 +290,6 @@ def add_submission(student_id,student_name, assignment_id, department, level, qu
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)
         """, (student_id, student_name, assignment_id, department, level, question, answers, course, assignment_marks))
         conn.commit()
-        st.success("✅ Submission uploaded successfully!")
     except sqlite3.IntegrityError:
         st.error("⚠️ You have already submitted this assignment!")
     conn.close()
@@ -322,7 +314,6 @@ def remove_submission(question, answers):
     c.execute("DELETE FROM submissions WHERE question=? AND answers=?", (question, answers))
     conn.commit()
     conn.close()
-    st.success("✅ Submission removed successfully!")
 
 
 # ==========================================
@@ -352,7 +343,6 @@ def add_score(student_name, department, score, course):
               (student_name, department, score, course))
     conn.commit()
     conn.close()
-    st.success("✅ Score added successfully!")
 
 
 def fetch_scores_table(department):
@@ -380,4 +370,4 @@ def remove_grades():
     c.execute("DELETE FROM scores")
     conn.commit()
     conn.close()
-    st.success("✅ All grades cleared successfully!")
+

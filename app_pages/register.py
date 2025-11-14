@@ -2,6 +2,7 @@ import streamlit as st
 import re
 from db import add_user, add_tutor
 from styles import inject_css
+import time as t
 
 
 def register_page():
@@ -48,12 +49,12 @@ def register_page():
         email = st.text_input("Enter Email")
         password = st.text_input("Choose a Password", type="password")
         confirm_password = st.text_input("Confirm Password", type="password")
-        
+        role = "Student"
 
         col1, col2 = st.columns(2)
-        with col1:
-            register_btn = st.button("Register", use_container_width=True)
         with col2:
+            register_btn = st.button("Register", use_container_width=True)
+        with col1:
             back_btn = st.button("Back to Login", use_container_width=True)
 
         if register_btn:
@@ -72,9 +73,11 @@ def register_page():
                 st.error("Student ID must be exactly 10 characters long.")
             else:
                 # Call db.py add_user
-                add_user(firstname, surname, username, student_id, gender, password, faculty, department, level, type_of_student, email, role="Student")
-                st.session_state["page"] = "Login"
-                st.rerun()
+                adding_user = add_user(firstname, surname, username, student_id, password,role, gender, faculty, department, level,email, type_of_student)
+                if adding_user:  
+                    st.success("✅ Account created successfully !!! you can now proceed to login")
+                    t.sleep(2)
+                    st.rerun()
 
         if back_btn:
             st.session_state["page"] = "Login"
@@ -95,7 +98,7 @@ def register_page():
         tutor_email = st.text_input("Tutor Email")
         tutor_password = st.text_input("Choose a Password", type="password")
         tutor_confirm_password = st.text_input("Confirm Password", type="password")
-
+        role = "Tutor"
         col1, col2 = st.columns(2)
         with col1:
             register_btn = st.button("Register", use_container_width=True)
@@ -117,9 +120,11 @@ def register_page():
                 st.error("Tutor ID must be exactly 8 characters long.")
             else:
                 # Call db.py add_tutor
-                add_tutor(firstname, surname, gender, tutor_username, tutor_password, tutor_department, faculty, tutor_id, tutor_email, role="Tutor")
-                st.session_state["page"] = "Login"
-                st.rerun()
+                adding_tutor = add_tutor(firstname, surname, gender,tutor_id, tutor_username, tutor_password, tutor_department, faculty,tutor_email,role)
+                if adding_tutor:
+                    st.success("✅ Tutor Account created Successfully !!!")
+                    t.sleep(2)
+                    st.rerun()
 
         if back_btn:
             st.session_state["page"] = "Login"
