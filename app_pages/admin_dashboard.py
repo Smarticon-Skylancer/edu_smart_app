@@ -8,13 +8,14 @@ import pandas as pd
 
 
 def post_an_assignment():
+    st.header("📄 Post a New Assignment")
     title = st.text_input("Enter title of Assigment : ")
     dead_line = st.date_input("Enter Dead Line for Submission : ")
     faculty = st.session_state.get("faculty")
     assignment_id = st.text_input(label="Enter Assignment ID : ", placeholder="Enter any number")
     department = st.session_state.get("department")
     level = st.selectbox("Select level : ",[100,200,300,400,500,600])
-    assigned_by = st.session_state.get("Student")
+    assigned_by = st.session_state.get("user")
     course = st.text_input("Enter Course for the Assignment : ")
     assignment_marks = st.number_input("Enter Marks Allocated for this Assignment : ",min_value = 0)
     question = st.text_area("Enter Question", height=300, placeholder="Enter assignment Questions here...")
@@ -22,7 +23,8 @@ def post_an_assignment():
         if not title or not question or not dead_line or not department or not course or not assignment_marks or not level:
             st.warning("⚠️ Please fill in all fields.")
         else:
-            add_assignment(title,assignment_id, question, assigned_by,dead_line,assignment_marks,faculty,department,course,level)
+            add_assignment(assignment_id,faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks)
+            
             st.success(f"{title} successfully posted!")
     
     st.write("### 📜 Recent Assignments")
@@ -31,7 +33,7 @@ def post_an_assignment():
     assignments = tutor_fetch_assignments(faculty,department)
     if assignments:
         for ass in assignments:
-            st.info(f"**[{ass[0]}]**\n\n{ass[1]}\n\n Course : {ass[6]}\n\nPosted by : Tutor {ass[2]} \n\n on {ass[3]} \n\n Total Attainable marks : {ass[5]} \n\n Dead line : {ass[4]}")
+            st.info(f"Assignment Title : {ass[5]} \n\n Level : {ass[4]} \n\n Assigned By : Tutor {ass[7]} ")
             st.warning("You cannot undo this Action, this would erase this assignment from the Students dashboard too !")
             confirmation_button = st.checkbox("I am sure", key=f"confirm_{ass}")
             delete_button = st.button('DELETE', key=f"delete_{ass}", use_container_width=True)
@@ -68,7 +70,7 @@ def admin_dashboard():
 
     df_courses = load_courses().sort_values(by=['Level'])
     admin_option = st.sidebar.radio("Navigation", ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a Student", "Remove a Student","Post Announcement","Post Assignments","View Submissions", "Logout"])
-    Student = st.session_state.get("Student")
+    user = st.session_state.get("user")
     first_name = st.session_state.get("firstname")
     surname = st.session_state.get("surname")
     department = st.session_state.get("department")
@@ -78,9 +80,10 @@ def admin_dashboard():
     Total_courses = get_courses_by_department()
     Total_students = fetch_all_users(department)
     Total_assigned = tutor_fetch_assignments(faculty,department)
+    Total_submissions = fetch_submissions(department,level=None)
     if admin_option == "Dashboard":
         st.title("📊 Course Tutor Dashboard")
-        st.header(f'Welcome {Student}')
+        st.header(f'Welcome {user} ')
         st.info(f'Full Name : {first_name} {surname}')
         st.info(f"Faculty : {faculty}")
         st.info(f"Department : {department}")
@@ -89,6 +92,7 @@ def admin_dashboard():
         st.info(f"Total Assignments Posted : {len(Total_assigned)}")
         st.info(f"Total Students in Department : {len(Total_students)}")
         st.info(f"Total Courses in Department : {len(Total_courses)}")
+        st.info(f"Total Submissions Received : {len(Total_submissions)}")
         
     
     elif admin_option == "Course Records":

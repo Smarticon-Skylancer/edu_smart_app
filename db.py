@@ -1,5 +1,6 @@
 import sqlite3
 import bcrypt
+from sqlalchemy import INTEGER
 import streamlit as st
 
 # ==========================================
@@ -51,7 +52,7 @@ def create_assignments_table():
     c.execute("""
         CREATE TABLE IF NOT EXISTS assignments(
             id INTEGER PRIMARY KEY AUTOINCREMENT,
-            assignment_id INT UNIQUE NOT NULL,
+            assignment_id TEXT UNIQUE NOT NULL,
             faculty TEXT NOT NULL,
             course TEXT NOT NULL,
             department TEXT NOT NULL,
@@ -229,15 +230,15 @@ def fetch_announcements():
 # ========== ASSIGNMENTS ===================
 # ==========================================
 
-def add_assignment(title, question, assignment_id, assigned_by, dead_line, assignment_marks, faculty, department, course, level):
+def add_assignment(assignment_id,faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks):
     create_assignments_table()
     conn = sqlite3.connect("assignments.db")
     c = conn.cursor()
     try:
         c.execute("""
-            INSERT INTO assignments (title, question, assignment_id, assigned_by, dead_line, assignment_marks, faculty, department, course, level)
+            INSERT INTO assignments (assignment_id,faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks)
             VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?, ?)
-        """, (title, question, assignment_id, assigned_by, dead_line, assignment_marks, faculty, department, course, level))
+        """, (assignment_id,faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks))
         conn.commit()
     except sqlite3.IntegrityError:
         st.error("⚠️ Assignment ID already exists!")
@@ -256,7 +257,7 @@ def tutor_fetch_assignments(faculty, department):
     conn = sqlite3.connect("assignments.db")
     c = conn.cursor()
     c.execute("""
-        SELECT title, question, assigned_by, date_posted, dead_line, assignment_marks, course
+        SELECT assignment_id,faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks
         FROM assignments WHERE faculty = ? AND department = ? ORDER BY date_posted DESC
     """, (faculty, department))
     assignments = c.fetchall()
@@ -268,7 +269,7 @@ def student_fetch_assignments(faculty, department, level):
     conn = sqlite3.connect("assignments.db")
     c = conn.cursor()
     c.execute("""
-        SELECT title, question, assigned_by, date_posted, dead_line, assignment_marks, course, level
+        SELECT assignment_id,faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks
         FROM assignments WHERE faculty = ? AND department = ? AND level = ? ORDER BY date_posted DESC
     """, (faculty, department, level))
     assignments = c.fetchall()
@@ -280,7 +281,7 @@ def student_fetch_assignments(faculty, department, level):
 # ========== SUBMISSIONS ===================
 # ==========================================
 
-def add_submission(student_id,student_name, assignment_id, department, level, question, answers, course, assignment_marks):
+def add_submission(student_id,assignment_id,student_name, department,question,course, level, answers, assignment_marks):
     create_submission_table()
     conn = sqlite3.connect("submissions.db")
     c = conn.cursor()
