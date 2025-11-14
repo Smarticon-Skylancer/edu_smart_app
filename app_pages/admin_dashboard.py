@@ -11,7 +11,7 @@ def post_an_assignment():
     title = st.text_input("Enter title of Assigment : ")
     dead_line = st.date_input("Enter Dead Line for Submission : ")
     faculty = st.session_state.get("faculty")
-    assignment_id = st.number_input(label="Enter Assignment ID : ", placeholder="Enter any number")
+    assignment_id = st.text_input(label="Enter Assignment ID : ", placeholder="Enter any number")
     department = st.session_state.get("department")
     level = st.selectbox("Select level : ",[100,200,300,400,500,600])
     assigned_by = st.session_state.get("Student")
