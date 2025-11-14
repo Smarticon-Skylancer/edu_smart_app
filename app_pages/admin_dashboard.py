@@ -18,7 +18,7 @@ def post_an_assignment():
     course = st.text_input("Enter Course for the Assignment : ")
     assignment_marks = st.number_input("Enter Marks Allocated for this Assignment : ",min_value = 0)
     question = st.text_area("Enter Question", height=300, placeholder="Enter assignment Questions here...")
-    if st.button("📩 Post"):
+    if st.button("📩 Post", use_container_width=True):
         if not title or not question or not dead_line or not department or not course or not assignment_marks or not level:
             st.warning("⚠️ Please fill in all fields.")
         else:
@@ -34,7 +34,7 @@ def post_an_assignment():
             st.info(f"**[{ass[0]}]**\n\n{ass[1]}\n\n Course : {ass[6]}\n\nPosted by : Tutor {ass[2]} \n\n on {ass[3]} \n\n Total Attainable marks : {ass[5]} \n\n Dead line : {ass[4]}")
             st.warning("You cannot undo this Action, this would erase this assignment from the Students dashboard too !")
             confirmation_button = st.checkbox("I am sure", key=f"confirm_{ass}")
-            delete_button = st.button('DELETE', key=f"delete_{ass}")
+            delete_button = st.button('DELETE', key=f"delete_{ass}", use_container_width=True)
             if delete_button and confirmation_button:
                 remove_assignment(title, question)
                 st.success("Assignment Deleted Successfully !")
@@ -48,7 +48,7 @@ def post_an_announcement():
     title = st.text_input("Enter Title")
     message = st.text_area("Enter Message", height=150, placeholder="Enter your message here...")
     
-    if st.button("📩 Post"):
+    if st.button("📩 Post", use_container_width=True):
         if not title or not message:
             st.warning("⚠️ Please fill in all fields.")
         else:
@@ -147,7 +147,7 @@ def admin_dashboard():
         new_level = st.selectbox("Select Level : ", [100, 200, 300, 400])
         new_course = st.text_input("Course Name").upper()
         department = st.session_state.get("department")
-        if st.button("Add Course", key='Add_course'):
+        if st.button("Add Course", key='Add_course', use_container_width=True):
             if new_level and new_course:
                 if new_course in df_courses['Course'].values:
                     st.error('⚠️ Course already exists!')
@@ -162,7 +162,7 @@ def admin_dashboard():
         courses_df = get_courses_by_department()
         if not courses_df.empty:
             course_to_remove = st.selectbox("Select course to remove", courses_df["Course"].unique())
-            if st.button("Remove Course", key='Remove_course'):
+            if st.button("Remove Course", key='Remove_course', use_container_width=True):
                 courses_df = courses_df[courses_df["Course"] != course_to_remove]
                 save_courses(courses_df)
                 st.success(f"Course {course_to_remove} removed successfully!")
@@ -190,7 +190,7 @@ def admin_dashboard():
                     st.markdown(f"**Date Submitted:** {date_submitted}")
                     st.markdown(f"**Assignment Marks:** {assignment_marks}")
                     score = st.number_input(f"Enter Score : ", min_value=0,max_value=assignment_marks, key=f"score_{i}") 
-                    submit_btn = st.button("Submit score", key=f"submit_{i}")
+                    submit_btn = st.button("Submit score", key=f"submit_{i}", use_container_width=True)
                     if submit_btn and score :
                         add_score(student_name,department,score,course)
                         st.success(f"✅ {student_name} scored Sucessfully !")
@@ -209,7 +209,7 @@ def admin_dashboard():
         df_users = pd.DataFrame(users, columns=["Username", "Faculty", "Level", "Type_of_student","Email","Department","Role"])
         if not df_users.empty:
             user_to_remove = st.selectbox("Select User to remove", df_users["Username"].unique())
-            if st.button("Remove User", key='Remove_user'):
+            if st.button("Remove User", key='Remove_user', use_container_width=True):
                 remove_user(user_to_remove)
                 st.success(f"User {user_to_remove} removed successfully!")
                 import time

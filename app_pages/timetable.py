@@ -24,7 +24,7 @@ def time_table_generator():
     study_hours = st.text_input("Enter study hours (comma separated)", "8am-10am,10am-12pm,12pm-1pm,2pm-4pm,4pm-6pm").split(",")
 
     # Add a shuffle button
-    if st.button("🎲 Shuffle & Generate Timetable"):
+    if st.button("🎲 Shuffle & Generate Timetable", use_container_width=True):
         subject_pool = []
         for subject, weight in subjects.items():
             subject_pool.extend([subject] * weight)

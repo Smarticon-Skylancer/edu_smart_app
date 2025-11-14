@@ -78,7 +78,7 @@ def student_chatroom():
 
     # Message input box
     message = st.text_area(placeholder="Type your message here 👇",label="💬 Message : ", key="chat_input")
-    send_message = st.button("Send Message", key="send_message")
+    send_message = st.button("Send Message", key="send_message", use_container_width=True)
     if message and send_message:
         add_message(username, message,department,faculty,level)
         st.session_state[message] = ""
