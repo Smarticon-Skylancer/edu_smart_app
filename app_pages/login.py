@@ -62,7 +62,7 @@ def login_page():
                         "page": "Tutor"
                     })
                     st.success("✅ Login successful !!!")
-                    t.time.sleep(2)
+                    t.sleep(2)
                     st.rerun()
                 else:
                     st.error("❌ Login failed. Check username and password.")
