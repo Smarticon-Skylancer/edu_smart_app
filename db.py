@@ -1,6 +1,5 @@
 import sqlite3
 import bcrypt
-from sqlalchemy import INTEGER
 import streamlit as st
 
 # ==========================================
