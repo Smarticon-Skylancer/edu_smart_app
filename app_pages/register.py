@@ -119,12 +119,10 @@ def register_page():
             elif len(tutor_id) != 8:
                 st.error("Tutor ID must be exactly 8 characters long.")
             else:
-                # Call db.py add_tutor
-                adding_tutor = add_tutor(firstname, surname, gender,tutor_id, tutor_username, tutor_password, tutor_department, faculty,tutor_email,role)
-                if adding_tutor:
-                    st.success("✅ Tutor Account created Successfully !!! you can now proceed to login")
-                    t.sleep(2)
-                    st.rerun()
+                add_tutor(firstname, surname, gender,tutor_id, tutor_username, tutor_password, tutor_department, faculty,tutor_email,role)
+                st.success("✅ Tutor Account created Successfully !!! you can now proceed to login")
+                t.sleep(2)
+                st.rerun()
 
         if back_btn:
             st.session_state["page"] = "Login"
