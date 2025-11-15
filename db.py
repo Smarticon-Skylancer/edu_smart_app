@@ -346,6 +346,8 @@ def add_score(student_name, department, score, course):
 
 
 def fetch_scores_table(department):
+    # Ensure scores table exists before querying
+    scores_table()
     conn = sqlite3.connect("scores.db")
     c = conn.cursor()
     c.execute("SELECT * FROM scores WHERE department = ?", (department,))
