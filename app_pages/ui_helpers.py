@@ -147,16 +147,10 @@ def render_sidebar(display_name=None, role=None, faculty=None, department=None, 
 
     st.sidebar.markdown("---")
 
-    # Navigation
-    # Use a radio in the sidebar for desktop and a selectbox for mobile users.
-    # We'll track which control the user interacted with via on_change callbacks
-    def _sidebar_nav_changed():
-        st.session_state[f"{key_prefix}_nav_source"] = "sidebar"
+    # Navigation: removed from sidebar to avoid duplicate collapsed selectbox on mobile.
+    # The calling page should render an in-page navigation control (top nav) instead.
 
-    def _mobile_nav_changed():
-        st.session_state[f"{key_prefix}_nav_source"] = "mobile"
-
-    selected = st.sidebar.radio("", nav_options, index=0, key=f"{key_prefix}_radio", on_change=_sidebar_nav_changed)
+    selected = None
 
     st.sidebar.markdown("---")
 
@@ -176,15 +170,4 @@ def render_sidebar(display_name=None, role=None, faculty=None, department=None, 
 
     st.sidebar.markdown("<div style='font-size:11px;color:var(--muted);padding-top:8px;'>EduSmart • v1.0</div>", unsafe_allow_html=True)
 
-    # Mobile-friendly top navigation (appears in main area) — users on phones can use this
-    try:
-        mobile_choice = st.selectbox("", nav_options, index=0, key=f"{key_prefix}_mobile_nav", on_change=_mobile_nav_changed)
-    except Exception:
-        # In case selectbox fails to render in some contexts, fall back to sidebar choice
-        mobile_choice = None
-
-    # Decide which nav to return based on the last widget the user interacted with
-    nav_source = st.session_state.get(f"{key_prefix}_nav_source", "sidebar")
-    if nav_source == "mobile" and mobile_choice:
-        return mobile_choice
     return selected
