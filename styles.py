@@ -324,19 +324,24 @@ def inject_css(role=None):
         .msg-meta {{ font-size: 11px; color: var(--muted); margin-top: 4px; }}
         .msg-avatar {{ width:36px;height:36px;border-radius:50%;display:inline-flex;align-items:center;justify-content:center;font-weight:700;color:white }}
 
-        /* Hide Streamlit default chrome and sharing links for cleaner, app-like UI */
-        #MainMenu {{
-            visibility: hidden;
+        /* Hide Streamlit default chrome and sharing links for cleaner, app-like UI
+           ONLY on larger screens — keep Streamlit menu/footer visible on small/mobile
+           so users can access navigation and sharing features. */
+        @media (min-width: 800px) {{
+            #MainMenu {{ visibility: hidden; }}
+            header {{ visibility: hidden; }}
+            footer {{ visibility: hidden; }}
+            /* Also hide the Streamlit branding that can appear in some embeds */
+            .css-1lsmgbg {{ display: none !important; }}
         }}
-        header {{
-            visibility: hidden;
-        }}
-        footer {{
-            visibility: hidden;
-        }}
-        /* Also hide the Streamlit branding that can appear in some embeds */
-        .css-1lsmgbg {{
-            display: none !important;
+
+        /* On small screens, make sure default chrome is visible so the mobile user
+           can access the hamburger menu and page navigation */
+        @media (max-width: 799px) {{
+            #MainMenu {{ visibility: visible !important; }}
+            header {{ visibility: visible !important; }}
+            footer {{ visibility: visible !important; }}
+            .css-1lsmgbg {{ display: block !important; }}
         }}
 
         </style>
