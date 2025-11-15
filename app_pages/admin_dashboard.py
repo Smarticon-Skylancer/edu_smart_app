@@ -99,10 +99,9 @@ def admin_dashboard():
     faculty = st.session_state.get("faculty")
     tutor_id = st.session_state.get("tutor_ID")
 
-    # Compact, consistent sidebar using helper. Navigation rendered in-page to avoid mobile collapsed selectbox.
+    # Compact, consistent sidebar using helper (sidebar shows only navigation)
     nav_items = ["Dashboard","Course Records","Student Records", "Add a Course", "Remove a Course", "Add a Student", "Remove a Student","Post Announcement","Post Assignments","View Submissions"]
-    render_sidebar(display_name=f"{first_name} {surname}", role="Tutor", faculty=faculty, department=department, nav_options=nav_items, key_prefix="admin")
-    admin_option = st.radio("", nav_items, index=0, key="admin_top_nav")
+    admin_option = render_sidebar(display_name=f"{first_name} {surname}", role="Tutor", faculty=faculty, department=department, nav_options=nav_items, key_prefix="admin")
     Total_courses = get_courses_by_department()
     Total_students = fetch_all_users(department)
     Total_assigned = tutor_fetch_assignments(faculty,department)

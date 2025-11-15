@@ -23,11 +23,9 @@ def user_dashboard():
     firstname = st.session_state.get("firstname", "Unknown")
     surname = st.session_state.get("surname", "Unknown")
 
-    # Build compact sidebar (profile + nav helper). Navigation is rendered in-page to avoid mobile collapsed selectbox.
+    # Build compact sidebar navigation (sidebar will show nav only)
     nav_items = ["Dashboard", "Timetable Generator", "GPA Calculator", "AI Assistant", "Chatroom", "Assignments", "Make a Submission", "My Grades", "Announcements & Events"]
-    render_sidebar(display_name=f"{firstname} {surname}", role="Student", faculty=faculty, department=department, nav_options=nav_items, key_prefix="student")
-    # Top navigation (in-page) — avoids Streamlit moving sidebar widgets into a selectbox on small screens
-    user_option = st.radio("", nav_items, index=0, key="student_top_nav")
+    user_option = render_sidebar(display_name=f"{firstname} {surname}", role="Student", faculty=faculty, department=department, nav_options=nav_items, key_prefix="student")
 
     if user_option == "Dashboard":
         inject_css("general")
