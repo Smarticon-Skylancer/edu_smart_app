@@ -13,7 +13,23 @@ def about_us():
 # Home Page
 # -------------------
     st.title("🚀 My Portfolio")
-    st.image(r"C:\Users\hp\Desktop\My_apps\My_Edu_smart_app\WhatsApp Image 2025-11-17 at 00.20.53_839ee808.jpg", width=100)  # replace with your own photo
+    st.markdown(
+        '''
+        <div class="sidebar-logo">
+            <svg xmlns="http://www.w3.org/2000/svg" width="70" height="70" viewBox="0 0 100 100" role="img" aria-label="Smart logo">
+                <defs>
+                    <linearGradient id="g" x1="0" x2="1">
+                        <stop offset="0" stop-color="#2563eb" />
+                        <stop offset="1" stop-color="#7dd3fc" />
+                    </linearGradient>
+                </defs>
+                <rect rx="18" width="100" height="100" fill="url(#g)" />
+                <text x="50" y="58" font-size="48" text-anchor="middle" fill="white" font-family="Inter, Arial">MA</text>
+            </svg>
+            </div>
+        </div>
+        '''
+        , unsafe_allow_html=True)
     
     st.write("""
     Hi, I'm **Michael Ayuba** 👋  
