@@ -37,8 +37,10 @@ def get_courses_by_department():
 
     if df.empty:
         return df
-
-    department = st.session_state.get("department", None)
+    if st.user:
+        department = st.session_state.get("department", None)
+    else:
+        department = st.session_state.get("guest_department", None)
 
     if department:
         df = df[df["Department"] == department]

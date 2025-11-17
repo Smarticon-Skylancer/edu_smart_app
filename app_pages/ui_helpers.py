@@ -168,7 +168,7 @@ def render_sidebar(display_name=None, role=None, faculty=None, department=None, 
         except Exception:
             # st.stop will end current script execution; Streamlit will perform a rerun after the widget event.
             st.stop()
-
+    
     st.sidebar.markdown("<div style='font-size:11px;color:var(--muted);padding-top:8px;'>EduSmart • v1.0</div>", unsafe_allow_html=True)
 
     return selected

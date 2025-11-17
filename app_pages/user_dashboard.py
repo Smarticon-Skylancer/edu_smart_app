@@ -81,9 +81,9 @@ def user_dashboard():
         st.title("Assignments ")
         if assignments:
             # assignment tuple: (assignment_id, faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks)
-            for i, (assignment_id, fac, course_name, dept, lvl, title, question, assigned_by, deadline, assignment_marks) in enumerate(assignments, start=1):
+            for i, (assignment_id, faculty, course_name, department, level, title, question, assigned_by, deadline, assignment_marks) in enumerate(assignments, start=1):
                 st.markdown(f"### 📝 {i}. {title}")
-                st.write(f"**Course:** {course_name} — **Level:** {lvl}")
+                st.write(f"**Course:** {course_name} — **Level:** {level}")
                 st.write(f"**Question:** {question}")
                 st.write(f"**Assigned by:** {assigned_by}")
                 st.write(f"**Deadline:** {deadline}")
@@ -126,8 +126,8 @@ def user_dashboard():
         else:
             st.info("Select Assignments and make Submisssions 📝")
             # assignment tuple: (assignment_id, faculty, course, department, level, title, question, assigned_by, dead_line, assignment_marks)
-            for i, (assignment_id, fac, course_name, dept, lvl, title, question, assigned_by, deadline, assignment_marks) in enumerate(assignments, start=1):
-                with st.expander(f"📝 {i}. {title} — {course_name} ({lvl} level) — Marks: {assignment_marks}"):
+            for i, (assignment_id, faculty, course, department, level, title, question, assigned_by, deadline, assignment_marks) in enumerate(assignments, start=1):
+                with st.expander(f"📝 {i}. {title} — {course} ({level} level) — Marks: {assignment_marks}"):
                     st.write(f"**Question:** {question}")
                     st.write(f"**Assigned by:** {assigned_by}")
                     st.write(f"**Deadline:** {deadline}")
@@ -137,7 +137,7 @@ def user_dashboard():
                         # Prepare correct parameters for add_submission(student_id,assignment_id,student_name, department,question,course, level, answers, assignment_marks)
                         student_id = st.session_state.get("student_id") or st.session_state.get("user")
                         try:
-                            add_submission(student_id, assignment_id, student_name, department, question, course_name, lvl, answers, assignment_marks)
+                            add_submission(student_id, assignment_id, student_name, department, question, course_name, level, answers, assignment_marks)
                             st.success("Your Assignment has been submitted successfully!")
                         except Exception as e:
                             st.error(f"Submission failed: {e}")

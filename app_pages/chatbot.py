@@ -1,5 +1,5 @@
 import streamlit as st
-from openai import OpenAI
+from openai import OpenAI, APIError,Timeout,APIConnectionError
 from styles import inject_css
 # ---------------------------------
 # 🔹 Initialize OpenAI Client
@@ -49,19 +49,25 @@ def student_chatbot():
         # 🔹 Generate AI response
         with st.chat_message("assistant"):
             with st.spinner("Thinking..."):
-                response = client.chat.completions.create(
-                    model="gpt-4o-mini",
-                    messages=[
-                        {"role": "system", "content": (
-                            "You are EduSmart, a friendly and knowledgeable AI tutor for students. "
-                            "Provide clear, step-by-step explanations and study tips related to courses, GPA, assignments, or academic life."
-                        )},
-                        *st.session_state.chat_history
-                    ],
-                )
-                reply = response.choices[0].message.content
-                st.markdown(reply)
+                try:
+                    response = client.chat.completions.create(
+                        model="gpt-4o-mini",
+                        messages=[
+                            {"role": "system", "content": (
+                                "You are EduSmart, a friendly and knowledgeable AI tutor for students. "
+                                "Provide clear, step-by-step explanations and study tips related to courses, GPA, assignments, or academic life."
+                            )},
+                            *st.session_state.chat_history
+                        ],
+                    )
+                    reply = response.choices[0].message.content
+                    st.markdown(reply)
+                except APIConnectionError: 
+                    st.markdown("Connection not established yet , please contact my developer")
 
         # 🔹 Save the assistant reply
-        st.session_state.chat_history.append({"role": "assistant", "content": reply})
+                    if reply:
+                        st.session_state.chat_history.append({"role": "assistant", "content": reply})
+                    else:
+                        pass
         

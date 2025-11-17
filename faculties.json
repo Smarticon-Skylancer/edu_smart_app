@@ -1,0 +1,51 @@
+{
+    "Science": [
+        "Biology",
+        "Computer Science",
+        "Microbiology",
+        "Biochemistry",
+        "Mathematics & Statistics",
+        "Physics with Electronics",
+        "Industrial Chemistry",
+        "Geology",
+        "Applied Geophysics"
+    ],
+    "Arts": [
+        "English",
+        "History & International Studies",
+        "European Languages",
+        "Accounting"
+    ],
+    "Social_&_Management_Sciences": [
+        "Geography",
+        "Political Science",
+        "Sociology",
+        "Economics",
+        "Demography & Social Statistics"
+    ],
+    "Health_Sciences": [
+        "Anatomy",
+        "Physiology",
+        "Nursing Sciences",
+        "Medicine and Surgery"
+    ],
+    "Environmental_Sciences": [
+        "Building Technology",
+        "Architecture",
+        "Quantity Surveying"
+    ],
+    "Administration": [
+        "Business Administration"
+    ],
+    "Education": [
+        "Education Biology",
+        "Education Computer Science",
+        "Education Chemistry",
+        "Education Mathematics",
+        "Education Physics",
+        "Education Geography",
+        "Education English",
+        "Education Economics",
+        "Education Geology"
+    ]
+}
